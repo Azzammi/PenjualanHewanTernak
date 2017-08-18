@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2E4B8-DC81-4A56-B177-A61C365B9DFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PenjualanHewanTernak</RootNamespace>
+    <AssemblyName>PenjualanHewanTernak</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClasses\FSBindingItem.cs" />
+    <Compile Include="BaseClasses\FSBindingList.cs" />
+    <Compile Include="BaseClasses\FSPropertyComparer.cs" />
+    <Compile Include="Controller\AppController.cs" />
+    <Compile Include="Controller\Children\CommandInsertChildren.cs" />
+    <Compile Include="Controller\Children\CommandUpdateChildren.cs" />
+    <Compile Include="Controller\Command.cs" />
+    <Compile Include="Controller\Cattle\CommandDeleteCattle.cs" />
+    <Compile Include="Controller\Cattle\CommandGetCattle.cs" />
+    <Compile Include="Controller\Cattle\CommandInsertCattle.cs" />
+    <Compile Include="Controller\Cattle\CommandUpdateCattle.cs" />
+    <Compile Include="Controller\Customer\CommandDeleteCustomer.cs" />
+    <Compile Include="Controller\Customer\CommandGetCustomer.cs" />
+    <Compile Include="Controller\Customer\CommandInsertCustomer.cs" />
+    <Compile Include="Controller\Customer\CommandUpdateCustomer.cs" />
+    <Compile Include="Controller\Harga\CommandDeleteHarga.cs" />
+    <Compile Include="Controller\Harga\CommandGantiHarga.cs" />
+    <Compile Include="Controller\Harga\CommandGetHarga.cs" />
+    <Compile Include="Controller\Harga\CommandInsertHarga.cs" />
+    <Compile Include="Controller\Harga\CommandUpdateHarga.cs" />
+    <Compile Include="Controller\Jenis\CommandDeleteJenis.cs" />
+    <Compile Include="Controller\Jenis\CommandGetJenis.cs" />
+    <Compile Include="Controller\Jenis\CommandInsertJenis.cs" />
+    <Compile Include="Controller\Jenis\CommandUpdateJenis.cs" />
+    <Compile Include="Controller\Grade\CommandDeleteGrade.cs" />
+    <Compile Include="Controller\Grade\CommandGetGrade.cs" />
+    <Compile Include="Controller\Grade\CommandInsertGrade.cs" />
+    <Compile Include="Controller\Grade\CommandUpdateGrade.cs" />
+    <Compile Include="Controller\Kandang\CommandDeleteKandang.cs" />
+    <Compile Include="Controller\Kandang\CommandGetKandang.cs" />
+    <Compile Include="Controller\Kandang\CommandInsertKandang.cs" />
+    <Compile Include="Controller\Kandang\CommandUpdateKandang.cs" />
+    <Compile Include="DataAccess\Cattle\CattleItemDAO.cs" />
+    <Compile Include="DataAccess\Cattle\CattleListDAO.cs" />
+    <Compile Include="DataAccess\ChildrenItemDAO.cs" />
+    <Compile Include="DataAccess\ConnectionProvider.cs" />
+    <Compile Include="DataAccess\Customer\CustomerListDAO.cs" />
+    <Compile Include="DataAccess\DataProvider.cs" />
+    <Compile Include="DataAccess\Grade\GradeItemDAO.cs" />
+    <Compile Include="DataAccess\Grade\GradeListDAO.cs" />
+    <Compile Include="DataAccess\Harga\HargaItemDAO.cs" />
+    <Compile Include="DataAccess\Harga\HargaListDAO.cs" />
+    <Compile Include="DataAccess\Jenis\JenisItemDAO.cs" />
+    <Compile Include="DataAccess\Jenis\JenisListDAO.cs" />
+    <Compile Include="DataAccess\KandangItemDAO.cs" />
+    <Compile Include="DataAccess\KandangListDAO.cs" />
+    <Compile Include="DataAccess\PosMutasiStokItemDAO.cs" />
+    <Compile Include="DataAccess\StockItemDAO.cs" />
+    <Compile Include="Report\CustomerReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cattle\CattleItem.cs" />
+    <Compile Include="Model\Cattle\CattleList.cs" />
+    <Compile Include="Model\Children\ChildrenItem.cs" />
+    <Compile Include="Model\Children\ChildrenList.cs" />
+    <Compile Include="Model\Customer\CustomerItem.cs" />
+    <Compile Include="Model\Customer\CustomerList.cs" />
+    <Compile Include="Model\Grade\GradeItem.cs" />
+    <Compile Include="Model\Grade\GradeList.cs" />
+    <Compile Include="Model\Harga\HargaItem.cs" />
+    <Compile Include="Model\Harga\HargaList.cs" />
+    <Compile Include="Model\Infaq\InfaqItem.cs" />
+    <Compile Include="Model\Infaq\InfaqList.cs" />
+    <Compile Include="Model\Jenis\JenisItem.cs" />
+    <Compile Include="Model\Jurnal Umum\JurnalUmumItem.cs" />
+    <Compile Include="Model\Jurnal Umum\JurnalUmumList.cs" />
+    <Compile Include="Model\Stok\KandangItem.cs" />
+    <Compile Include="Model\Stok\KandangList.cs" />
+    <Compile Include="Model\Stok\MutasiStokItem.cs" />
+    <Compile Include="Model\Stok\MutasiStokList.cs" />
+    <Compile Include="Model\Pemasukan\Pemasukan.cs" />
+    <Compile Include="Model\Pemasukan\PemasukanList.cs" />
+    <Compile Include="Model\Pengeluaran\Pengeluaran.cs" />
+    <Compile Include="Model\Pengeluaran\PengeluaranList.cs" />
+    <Compile Include="Model\Pemasukan\posPemasukaList.cs" />
+    <Compile Include="Model\Pemasukan\posPemasukanItem.cs" />
+    <Compile Include="Model\Pengeluaran\posPengeluaranItem.cs" />
+    <Compile Include="Model\Pengeluaran\PosPengeluaranList.cs" />
+    <Compile Include="Model\Stok\PosMutasiStokItem.cs" />
+    <Compile Include="Model\Stok\PosMutasiStokList.cs" />
+    <Compile Include="Model\Stok\StockItem.cs" />
+    <Compile Include="Model\Stok\StockList.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\FrmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCustomer.Designer.cs">
+      <DependentUpon>FrmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmGrade.Designer.cs">
+      <DependentUpon>FrmGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmHarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmHarga.Designer.cs">
+      <DependentUpon>FrmHarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmJenis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmJenis.Designer.cs">
+      <DependentUpon>FrmJenis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmMiniMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMiniMenu.Designer.cs">
+      <DependentUpon>FrmMiniMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Model\Jenis\JenisList.cs" />
+    <EmbeddedResource Include="Report\CustomerReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CustomerReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCustomer.resx">
+      <DependentUpon>FrmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmGrade.resx">
+      <DependentUpon>FrmGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmHarga.resx">
+      <DependentUpon>FrmHarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmJenis.id.resx">
+      <DependentUpon>FrmJenis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmJenis.resx">
+      <DependentUpon>FrmJenis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMiniMenu.resx">
+      <DependentUpon>FrmMiniMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="DataAccess\Customer\CustomerItemDAO.cs" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.CattleItem.datasource" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.ChildrenItem1.datasource" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.CustomerItem1.datasource" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.GradeItem.datasource" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.HargaItem.datasource" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.JenisItem.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Accept Database_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Database_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available Updates_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bank_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_body.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-main.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-sidebar-title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-sidebar-title-me.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash In Hand_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close Window_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data Backup_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete Database_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doctor Male_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Double Tick_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facebook_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fast Forward_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Google Web Search_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Health Book_50px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Health Book_50px_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maintenance_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medical Doctor_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mortar and Pestle_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mortar_and_Pestle.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MySQL_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-profile.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open Folder_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paid_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pencil Tip_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peta_lokasi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receipt_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receive Cash_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rewind_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_50px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treatment Plan_96px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View Details_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xlarge Icons_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
