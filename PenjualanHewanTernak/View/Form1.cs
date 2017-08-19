@@ -67,10 +67,11 @@ namespace PenjualanHewanTernak.View
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            cattleItemDataGridView.EndEdit();
+
             if (m_ItemList == null) return;
 
             CattleItem m_item = (CattleItem)cattleItemBindingSource.Current;
-
             if (m_item == null) return;
 
             if (isNewRecord)
