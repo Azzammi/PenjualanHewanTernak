@@ -166,6 +166,12 @@
     <Compile Include="View\FrmJenis.Designer.cs">
       <DependentUpon>FrmJenis.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmKandang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmKandang.Designer.cs">
+      <DependentUpon>FrmKandang.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmMiniMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     <EmbeddedResource Include="View\FrmJenis.resx">
       <DependentUpon>FrmJenis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmKandang.resx">
+      <DependentUpon>FrmKandang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMiniMenu.resx">
       <DependentUpon>FrmMiniMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +224,7 @@
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.GradeItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.HargaItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.JenisItem.datasource" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.KandangItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

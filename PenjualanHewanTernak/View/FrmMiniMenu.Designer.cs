@@ -36,6 +36,7 @@
             this.hEWANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hargaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kandangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,8 @@
             this.gRADEToolStripMenuItem,
             this.hEWANToolStripMenuItem,
             this.hargaToolStripMenuItem,
-            this.customerToolStripMenuItem});
+            this.customerToolStripMenuItem,
+            this.kandangToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.masterToolStripMenuItem.Text = "Master";
@@ -103,6 +105,13 @@
             this.customerToolStripMenuItem.Text = "Customer";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
+            // kandangToolStripMenuItem
+            // 
+            this.kandangToolStripMenuItem.Name = "kandangToolStripMenuItem";
+            this.kandangToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kandangToolStripMenuItem.Text = "Kandang";
+            this.kandangToolStripMenuItem.Click += new System.EventHandler(this.kandangToolStripMenuItem_Click);
+            // 
             // FrmMiniMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,5 +139,6 @@
         private System.Windows.Forms.ToolStripMenuItem hEWANToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hargaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kandangToolStripMenuItem;
     }
 }

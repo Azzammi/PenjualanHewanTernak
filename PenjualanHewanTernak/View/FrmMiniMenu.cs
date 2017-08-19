@@ -51,5 +51,11 @@ namespace PenjualanHewanTernak.View
             FrmCustomer form = new FrmCustomer();
             form.ShowDialog();
         }
+
+        private void kandangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmKandang form = new FrmKandang();
+            form.ShowDialog();
+        }
     }
 }
