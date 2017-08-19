@@ -37,10 +37,12 @@ namespace PenjualanHewanTernak.View
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            //Finish editing DataGridView
+            gradeItemBindingSource.EndEdit();
+
             if (m_ItemList == null) return;
 
             GradeItem m_item = (GradeItem)gradeItemBindingSource.Current;
-
             if (m_item == null) return;
 
             if (isNewRecord)

@@ -36,11 +36,13 @@ namespace PenjualanHewanTernak.View
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
-        {    
+        {
+            //Finish editing datagridview
+            jenisItemDataGridView.EndEdit();
+
             if (m_ItemList == null) return;
 
             JenisItem m_item = (JenisItem)jenisItemBindingSource.Current;
-
             if (m_item == null) return;
 
             if (isNewRecord)
