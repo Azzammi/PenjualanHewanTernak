@@ -106,7 +106,7 @@
             // kodeGradeLabel
             // 
             kodeGradeLabel.AutoSize = true;
-            kodeGradeLabel.Location = new System.Drawing.Point(372, 47);
+            kodeGradeLabel.Location = new System.Drawing.Point(342, 47);
             kodeGradeLabel.Name = "kodeGradeLabel";
             kodeGradeLabel.Size = new System.Drawing.Size(67, 13);
             kodeGradeLabel.TabIndex = 17;
@@ -115,7 +115,7 @@
             // kodeHewanLabel
             // 
             kodeHewanLabel.AutoSize = true;
-            kodeHewanLabel.Location = new System.Drawing.Point(367, 74);
+            kodeHewanLabel.Location = new System.Drawing.Point(342, 74);
             kodeHewanLabel.Name = "kodeHewanLabel";
             kodeHewanLabel.Size = new System.Drawing.Size(72, 13);
             kodeHewanLabel.TabIndex = 18;

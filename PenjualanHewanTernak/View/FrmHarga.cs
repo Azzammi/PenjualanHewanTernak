@@ -111,7 +111,7 @@ namespace PenjualanHewanTernak.View
             if (pesan == DialogResult.Yes)
             {
                 CommandGantiHarga gantiharga = new CommandGantiHarga(m_item);
-                m_AppController.ExecuteCommand(gantiharga);
+                HargaItem newHarga = (HargaItem)m_AppController.ExecuteCommand(gantiharga);
             }
         }
     }

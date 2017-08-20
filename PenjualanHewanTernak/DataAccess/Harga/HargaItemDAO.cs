@@ -39,7 +39,7 @@ namespace PenjualanHewanTernak.DataAccess
                         "beforePrice = @beforePrice, " +
                         "currentPriceDate = @currentDate, " +
                         "currentPrice = @currentPrice, " +
-                        "stat     = @stat, " +                        
+                        "stat     = @stat " +                        
                         "WHERE KodeGrade = @codeGrade and KodeHewan = @codeHewan; ";
             AddorUpdateRecord(sql, updateHarga);
 
@@ -78,6 +78,14 @@ namespace PenjualanHewanTernak.DataAccess
             }
         }
 
+        internal void UbahHarga (HargaItem changeHarga)
+        {
+            changeHarga.BeforePrice = changeHarga.CurrentPrice;
+            changeHarga.BeforePriceDate = changeHarga.BeforePriceDate;
+
+            changeHarga.CurrentPrice = 0;
+            changeHarga.CurrentPriceDate = DateTime.Now;
+        }
         protected void AddorUpdateRecord(string sql, HargaItem ItemMaster)
         {
             try

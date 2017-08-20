@@ -75,10 +75,8 @@ namespace PenjualanHewanTernak.Model
         //Methods to change current Price
         internal void GantiHarga()
         {
-            BeforePriceDate = currentPriceDate;
-            BeforePrice = currentPrice;
-            currentPriceDate = DateTime.Now;
-            currentPrice = 0;
+            HargaItemDAO dao = new HargaItemDAO();
+            dao.UbahHarga(this);
         }
 
         internal void CreateDatabaseRecord()
