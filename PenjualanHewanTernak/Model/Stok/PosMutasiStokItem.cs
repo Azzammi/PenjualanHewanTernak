@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FSCollections;
+using PenjualanHewanTernak.DataAccess;
+
 namespace PenjualanHewanTernak.Model
 {
     public class PosMutasiStokItem : FSBindingItem
@@ -43,7 +45,21 @@ namespace PenjualanHewanTernak.Model
         #endregion
 
         #region Methods
-
+        internal void CreateDatabaseRecord()
+        {
+            PosMutasiStokItemDAO dao = new PosMutasiStokItemDAO();
+            dao.CreateDatabaseRecord(this);
+        }
+        internal void UpdateDatabaseRecord()
+        {
+            PosMutasiStokItemDAO dao = new PosMutasiStokItemDAO();
+            dao.UpdateDatabaseRecord(this);
+        }
+        internal void DeleteDatabaseRecord()
+        {
+            PosMutasiStokItemDAO dao = new PosMutasiStokItemDAO();
+            dao.DeleteDatabaseRecord(this.NoRef);
+        }
         #endregion
     }
 }

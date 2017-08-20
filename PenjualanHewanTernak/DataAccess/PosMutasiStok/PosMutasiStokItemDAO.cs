@@ -26,14 +26,14 @@ namespace PenjualanHewanTernak.DataAccess
         #region Methods
         internal void CreateDatabaseRecord(PosMutasiStokItem newMutasi)
         {
-            string sql = "INSERT INTO MUTASI_STOK (NoRef, isPemasukan, Keterangan, Stat) " +
+            string sql = "INSERT INTO POS_MUTASI_STOK (NoRef, isPemasukan, Keterangan, Stat) " +
                         "VALUES(@code,@isPemasukan,@ket,@stat)";
             AddOrUpdateDatabaseRecord(sql, newMutasi);
         }
 
         internal void UpdateDatabaseRecord(PosMutasiStokItem updateKandang)
         {
-            string sql = "UPDATE MUTASI_STOK SET " +
+            string sql = "UPDATE POS_MUTASI_STOK SET " +
                         "isPemasukan = @isPemasukan, " +
                         "Keterangan = @ket, " +
                         "Stat = @stat " +
@@ -43,7 +43,7 @@ namespace PenjualanHewanTernak.DataAccess
 
         internal void DeleteDatabaseRecord(string KodeKandang)
         {
-            string sql = "Delete From MUTASI_STOK Where NoRef = @code";
+            string sql = "Delete From POS_MUTASI_STOK Where NoRef = @code";
             try
             {
                 //Create and open a connection
