@@ -52,11 +52,14 @@
             this.DeleteBtn = new System.Windows.Forms.ToolStripButton();
             this.SaveBtn = new System.Windows.Forms.ToolStripButton();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingNavigator)).BeginInit();
             this.posMutasiStokItemBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemDataGridView)).BeginInit();
             this.toolStrip2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // posMutasiStokItemBindingSource
@@ -175,6 +178,7 @@
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewCheckBoxColumn2});
+            this.posMutasiStokItemDataGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.posMutasiStokItemDataGridView.DataSource = this.posMutasiStokItemBindingSource;
             this.posMutasiStokItemDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.posMutasiStokItemDataGridView.Location = new System.Drawing.Point(0, 33);
@@ -240,6 +244,7 @@
             this.DeleteBtn.Size = new System.Drawing.Size(57, 35);
             this.DeleteBtn.Text = "Delete(s)";
             this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // SaveBtn
             // 
@@ -250,6 +255,7 @@
             this.SaveBtn.Size = new System.Drawing.Size(51, 35);
             this.SaveBtn.Text = "Simpan";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // AddBtn
             // 
@@ -262,6 +268,21 @@
             this.AddBtn.Text = "Tambah";
             this.AddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // FrmPosMutasiStok
             // 
@@ -283,6 +304,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemDataGridView)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,5 +334,7 @@
         private System.Windows.Forms.ToolStripButton DeleteBtn;
         private System.Windows.Forms.ToolStripButton SaveBtn;
         private System.Windows.Forms.ToolStripButton AddBtn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
