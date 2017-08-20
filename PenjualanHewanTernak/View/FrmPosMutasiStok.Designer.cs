@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPosMutasiStok));
-            this.posMutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.posMutasiStokItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -43,10 +42,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.posMutasiStokItemDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.CancelBtn = new System.Windows.Forms.ToolStripButton();
             this.DeleteBtn = new System.Windows.Forms.ToolStripButton();
@@ -54,17 +49,18 @@
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).BeginInit();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.posMutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingNavigator)).BeginInit();
             this.posMutasiStokItemBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemDataGridView)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // posMutasiStokItemBindingSource
-            // 
-            this.posMutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.PosMutasiStokItem);
             // 
             // posMutasiStokItemBindingNavigator
             // 
@@ -171,6 +167,7 @@
             // 
             // posMutasiStokItemDataGridView
             // 
+            this.posMutasiStokItemDataGridView.AllowUserToAddRows = false;
             this.posMutasiStokItemDataGridView.AutoGenerateColumns = false;
             this.posMutasiStokItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.posMutasiStokItemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -185,30 +182,6 @@
             this.posMutasiStokItemDataGridView.Name = "posMutasiStokItemDataGridView";
             this.posMutasiStokItemDataGridView.Size = new System.Drawing.Size(445, 292);
             this.posMutasiStokItemDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "NoRef";
-            this.dataGridViewTextBoxColumn1.HeaderText = "NoRef";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsPemasukan";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "IsPemasukan";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Keterangan";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Keterangan";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "Stat";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Stat";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
             // 
             // toolStrip2
             // 
@@ -275,14 +248,42 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NoRef";
+            this.dataGridViewTextBoxColumn1.HeaderText = "NoRef";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsPemasukan";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "IsPemasukan";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Keterangan";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Keterangan";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "Stat";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Stat";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            // 
+            // posMutasiStokItemBindingSource
+            // 
+            this.posMutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.PosMutasiStokItem);
             // 
             // FrmPosMutasiStok
             // 
@@ -297,7 +298,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pos Mutasi Stok";
             this.Load += new System.EventHandler(this.FrmPosMutasiStok_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingNavigator)).EndInit();
             this.posMutasiStokItemBindingNavigator.ResumeLayout(false);
             this.posMutasiStokItemBindingNavigator.PerformLayout();
@@ -305,6 +305,7 @@
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

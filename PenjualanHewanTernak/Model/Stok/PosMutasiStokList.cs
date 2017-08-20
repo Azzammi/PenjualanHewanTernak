@@ -14,7 +14,7 @@ namespace PenjualanHewanTernak.Model
         public PosMutasiStokList()
         {
             PosMutasiStokListDAO dao = new PosMutasiStokListDAO();
-            dao.ShowList();
+            dao.ShowList(this);
         }
         #endregion
     }
