@@ -1,6 +1,6 @@
 ﻿namespace PenjualanHewanTernak.View
 {
-    partial class FrmKandang
+    partial class FrmPosMutasiStok
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKandang));
-            this.kandangItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.kandangItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPosMutasiStok));
+            this.posMutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.posMutasiStokItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -42,32 +42,34 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.kandangItemDataGridView = new System.Windows.Forms.DataGridView();
+            this.posMutasiStokItemDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.CancelBtn = new System.Windows.Forms.ToolStripButton();
             this.DeleteBtn = new System.Windows.Forms.ToolStripButton();
             this.SaveBtn = new System.Windows.Forms.ToolStripButton();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingNavigator)).BeginInit();
-            this.kandangItemBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kandangItemDataGridView)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingNavigator)).BeginInit();
+            this.posMutasiStokItemBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemDataGridView)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // kandangItemBindingNavigator
+            // posMutasiStokItemBindingSource
             // 
-            this.kandangItemBindingNavigator.AddNewItem = null;
-            this.kandangItemBindingNavigator.BindingSource = this.kandangItemBindingSource;
-            this.kandangItemBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.kandangItemBindingNavigator.DeleteItem = null;
-            this.kandangItemBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.posMutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.PosMutasiStokItem);
+            // 
+            // posMutasiStokItemBindingNavigator
+            // 
+            this.posMutasiStokItemBindingNavigator.AddNewItem = null;
+            this.posMutasiStokItemBindingNavigator.BindingSource = this.posMutasiStokItemBindingSource;
+            this.posMutasiStokItemBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.posMutasiStokItemBindingNavigator.DeleteItem = null;
+            this.posMutasiStokItemBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -78,20 +80,16 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.toolStripLabel1});
-            this.kandangItemBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.kandangItemBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.kandangItemBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.kandangItemBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.kandangItemBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.kandangItemBindingNavigator.Name = "kandangItemBindingNavigator";
-            this.kandangItemBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.kandangItemBindingNavigator.Size = new System.Drawing.Size(395, 33);
-            this.kandangItemBindingNavigator.TabIndex = 0;
-            this.kandangItemBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // kandangItemBindingSource
-            // 
-            this.kandangItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.KandangItem);
+            this.posMutasiStokItemBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.posMutasiStokItemBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.posMutasiStokItemBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.posMutasiStokItemBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.posMutasiStokItemBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.posMutasiStokItemBindingNavigator.Name = "posMutasiStokItemBindingNavigator";
+            this.posMutasiStokItemBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.posMutasiStokItemBindingNavigator.Size = new System.Drawing.Size(445, 33);
+            this.posMutasiStokItemBindingNavigator.TabIndex = 0;
+            this.posMutasiStokItemBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
@@ -165,31 +163,36 @@
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(121, 30);
-            this.toolStripLabel1.Text = "KANDANG";
+            this.toolStripLabel1.Size = new System.Drawing.Size(172, 30);
+            this.toolStripLabel1.Text = "Pos Mutasi Stok";
             // 
-            // kandangItemDataGridView
+            // posMutasiStokItemDataGridView
             // 
-            this.kandangItemDataGridView.AllowUserToAddRows = false;
-            this.kandangItemDataGridView.AutoGenerateColumns = false;
-            this.kandangItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kandangItemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.posMutasiStokItemDataGridView.AutoGenerateColumns = false;
+            this.posMutasiStokItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.posMutasiStokItemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
+            this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewCheckBoxColumn1});
-            this.kandangItemDataGridView.ContextMenuStrip = this.contextMenuStrip1;
-            this.kandangItemDataGridView.DataSource = this.kandangItemBindingSource;
-            this.kandangItemDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kandangItemDataGridView.Location = new System.Drawing.Point(0, 33);
-            this.kandangItemDataGridView.Name = "kandangItemDataGridView";
-            this.kandangItemDataGridView.Size = new System.Drawing.Size(395, 280);
-            this.kandangItemDataGridView.TabIndex = 1;
+            this.dataGridViewCheckBoxColumn2});
+            this.posMutasiStokItemDataGridView.DataSource = this.posMutasiStokItemBindingSource;
+            this.posMutasiStokItemDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.posMutasiStokItemDataGridView.Location = new System.Drawing.Point(0, 33);
+            this.posMutasiStokItemDataGridView.Name = "posMutasiStokItemDataGridView";
+            this.posMutasiStokItemDataGridView.Size = new System.Drawing.Size(445, 292);
+            this.posMutasiStokItemDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "KodeKandang";
-            this.dataGridViewTextBoxColumn1.HeaderText = "KodeKandang";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NoRef";
+            this.dataGridViewTextBoxColumn1.HeaderText = "NoRef";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsPemasukan";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "IsPemasukan";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -197,24 +200,11 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Keterangan";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // dataGridViewCheckBoxColumn1
+            // dataGridViewCheckBoxColumn2
             // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Stat";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Stat";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "Stat";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Stat";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
             // 
             // toolStrip2
             // 
@@ -224,10 +214,10 @@
             this.DeleteBtn,
             this.SaveBtn,
             this.AddBtn});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 313);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 325);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(395, 38);
-            this.toolStrip2.TabIndex = 4;
+            this.toolStrip2.Size = new System.Drawing.Size(445, 38);
+            this.toolStrip2.TabIndex = 5;
             this.toolStrip2.TabStop = true;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -250,7 +240,6 @@
             this.DeleteBtn.Size = new System.Drawing.Size(57, 35);
             this.DeleteBtn.Text = "Delete(s)";
             this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // SaveBtn
             // 
@@ -261,7 +250,6 @@
             this.SaveBtn.Size = new System.Drawing.Size(51, 35);
             this.SaveBtn.Text = "Simpan";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // AddBtn
             // 
@@ -274,27 +262,25 @@
             this.AddBtn.Text = "Tambah";
             this.AddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // FrmKandang
+            // FrmPosMutasiStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 351);
-            this.Controls.Add(this.kandangItemDataGridView);
+            this.ClientSize = new System.Drawing.Size(445, 363);
+            this.Controls.Add(this.posMutasiStokItemDataGridView);
             this.Controls.Add(this.toolStrip2);
-            this.Controls.Add(this.kandangItemBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "FrmKandang";
+            this.Controls.Add(this.posMutasiStokItemBindingNavigator);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "FrmPosMutasiStok";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kandang";
-            this.Load += new System.EventHandler(this.FrmKandang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingNavigator)).EndInit();
-            this.kandangItemBindingNavigator.ResumeLayout(false);
-            this.kandangItemBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kandangItemDataGridView)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.Text = "Pos Mutasi Stok";
+            this.Load += new System.EventHandler(this.FrmPosMutasiStok_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingNavigator)).EndInit();
+            this.posMutasiStokItemBindingNavigator.ResumeLayout(false);
+            this.posMutasiStokItemBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemDataGridView)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -304,8 +290,8 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource kandangItemBindingSource;
-        private System.Windows.Forms.BindingNavigator kandangItemBindingNavigator;
+        private System.Windows.Forms.BindingSource posMutasiStokItemBindingSource;
+        private System.Windows.Forms.BindingNavigator posMutasiStokItemBindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -315,13 +301,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.DataGridView kandangItemDataGridView;
+        private System.Windows.Forms.DataGridView posMutasiStokItemDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton CancelBtn;
         private System.Windows.Forms.ToolStripButton DeleteBtn;

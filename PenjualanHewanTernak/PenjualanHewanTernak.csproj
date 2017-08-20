@@ -81,6 +81,10 @@
     <Compile Include="Controller\Kandang\CommandGetKandang.cs" />
     <Compile Include="Controller\Kandang\CommandInsertKandang.cs" />
     <Compile Include="Controller\Kandang\CommandUpdateKandang.cs" />
+    <Compile Include="Controller\PosMutasiStok\CommandDeletePosMutasiStok.cs" />
+    <Compile Include="Controller\PosMutasiStok\CommandGetPosMutasiStok.cs" />
+    <Compile Include="Controller\PosMutasiStok\CommandInsertPosMutasiStok.cs" />
+    <Compile Include="Controller\PosMutasiStok\CommandUpdatePosMutasiStok.cs" />
     <Compile Include="DataAccess\Cattle\CattleItemDAO.cs" />
     <Compile Include="DataAccess\Cattle\CattleListDAO.cs" />
     <Compile Include="DataAccess\ChildrenItemDAO.cs" />
@@ -93,9 +97,10 @@
     <Compile Include="DataAccess\Harga\HargaListDAO.cs" />
     <Compile Include="DataAccess\Jenis\JenisItemDAO.cs" />
     <Compile Include="DataAccess\Jenis\JenisListDAO.cs" />
-    <Compile Include="DataAccess\KandangItemDAO.cs" />
-    <Compile Include="DataAccess\KandangListDAO.cs" />
-    <Compile Include="DataAccess\PosMutasiStokItemDAO.cs" />
+    <Compile Include="DataAccess\Kandang\KandangItemDAO.cs" />
+    <Compile Include="DataAccess\Kandang\KandangListDAO.cs" />
+    <Compile Include="DataAccess\PosMutasiStok\PosMutasiStokItemDAO.cs" />
+    <Compile Include="DataAccess\PosMutasiStok\PosMutasiStokListDAO.cs" />
     <Compile Include="DataAccess\StockItemDAO.cs" />
     <Compile Include="Report\CustomerReport.cs">
       <AutoGen>True</AutoGen>
@@ -178,6 +183,12 @@
     <Compile Include="View\FrmMiniMenu.Designer.cs">
       <DependentUpon>FrmMiniMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmPosMutasiStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmPosMutasiStok.Designer.cs">
+      <DependentUpon>FrmPosMutasiStok.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -218,6 +229,9 @@
       <DependentUpon>FrmMiniMenu.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="DataAccess\Customer\CustomerItemDAO.cs" />
+    <EmbeddedResource Include="View\FrmPosMutasiStok.resx">
+      <DependentUpon>FrmPosMutasiStok.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.CattleItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.ChildrenItem1.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.CustomerItem1.datasource" />
@@ -225,6 +239,7 @@
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.HargaItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.JenisItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.KandangItem.datasource" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.PosMutasiStokItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
