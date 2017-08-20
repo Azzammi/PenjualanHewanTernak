@@ -33,6 +33,7 @@
             System.Windows.Forms.Label currentPriceLabel;
             System.Windows.Forms.Label statLabel;
             System.Windows.Forms.Label kodeGradeLabel;
+            System.Windows.Forms.Label kodeHewanLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHarga));
             this.hargaItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hargaItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -61,10 +62,12 @@
             this.SaveBtn = new System.Windows.Forms.ToolStripButton();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.kodeGradeComboBox = new System.Windows.Forms.ComboBox();
+            this.kodeHewanComboBox = new System.Windows.Forms.ComboBox();
             beforePriceLabel = new System.Windows.Forms.Label();
             currentPriceLabel = new System.Windows.Forms.Label();
             statLabel = new System.Windows.Forms.Label();
             kodeGradeLabel = new System.Windows.Forms.Label();
+            kodeHewanLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.hargaItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hargaItemBindingNavigator)).BeginInit();
             this.hargaItemBindingNavigator.SuspendLayout();
@@ -108,6 +111,15 @@
             kodeGradeLabel.Size = new System.Drawing.Size(67, 13);
             kodeGradeLabel.TabIndex = 17;
             kodeGradeLabel.Text = "Kode Grade:";
+            // 
+            // kodeHewanLabel
+            // 
+            kodeHewanLabel.AutoSize = true;
+            kodeHewanLabel.Location = new System.Drawing.Point(367, 74);
+            kodeHewanLabel.Name = "kodeHewanLabel";
+            kodeHewanLabel.Size = new System.Drawing.Size(72, 13);
+            kodeHewanLabel.TabIndex = 18;
+            kodeHewanLabel.Text = "Kode Hewan:";
             // 
             // hargaItemBindingSource
             // 
@@ -353,7 +365,7 @@
             // 
             this.kodeGradeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hargaItemBindingSource, "KodeGrade", true));
             this.kodeGradeComboBox.DataSource = this.gradeItemBindingSource;
-            this.kodeGradeComboBox.DisplayMember = "Keterangan";
+            this.kodeGradeComboBox.DisplayMember = "KodeGrade";
             this.kodeGradeComboBox.FormattingEnabled = true;
             this.kodeGradeComboBox.Location = new System.Drawing.Point(445, 44);
             this.kodeGradeComboBox.Name = "kodeGradeComboBox";
@@ -361,11 +373,26 @@
             this.kodeGradeComboBox.TabIndex = 18;
             this.kodeGradeComboBox.ValueMember = "KodeGrade";
             // 
+            // kodeHewanComboBox
+            // 
+            this.kodeHewanComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cattleItemBindingSource, "KodeHewan", true));
+            this.kodeHewanComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hargaItemBindingSource, "KodeHewan", true));
+            this.kodeHewanComboBox.DataSource = this.cattleItemBindingSource;
+            this.kodeHewanComboBox.DisplayMember = "KodeHewan";
+            this.kodeHewanComboBox.FormattingEnabled = true;
+            this.kodeHewanComboBox.Location = new System.Drawing.Point(445, 71);
+            this.kodeHewanComboBox.Name = "kodeHewanComboBox";
+            this.kodeHewanComboBox.Size = new System.Drawing.Size(121, 21);
+            this.kodeHewanComboBox.TabIndex = 19;
+            this.kodeHewanComboBox.ValueMember = "KodeHewan";
+            // 
             // FrmHarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 340);
+            this.Controls.Add(kodeHewanLabel);
+            this.Controls.Add(this.kodeHewanComboBox);
             this.Controls.Add(kodeGradeLabel);
             this.Controls.Add(this.kodeGradeComboBox);
             this.Controls.Add(this.toolStrip2);
@@ -426,5 +453,6 @@
         private System.Windows.Forms.ToolStripButton SaveBtn;
         private System.Windows.Forms.ToolStripButton AddBtn;
         private System.Windows.Forms.ComboBox kodeGradeComboBox;
+        private System.Windows.Forms.ComboBox kodeHewanComboBox;
     }
 }
