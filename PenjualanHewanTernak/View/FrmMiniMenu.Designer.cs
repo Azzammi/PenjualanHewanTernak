@@ -36,6 +36,8 @@
             this.hEWANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hargaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kandangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.posMutasiStokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +65,9 @@
             this.gRADEToolStripMenuItem,
             this.hEWANToolStripMenuItem,
             this.hargaToolStripMenuItem,
-            this.customerToolStripMenuItem});
+            this.customerToolStripMenuItem,
+            this.kandangToolStripMenuItem,
+            this.posMutasiStokToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.masterToolStripMenuItem.Text = "Master";
@@ -71,37 +75,51 @@
             // jENISToolStripMenuItem
             // 
             this.jENISToolStripMenuItem.Name = "jENISToolStripMenuItem";
-            this.jENISToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.jENISToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.jENISToolStripMenuItem.Text = "JENIS";
             this.jENISToolStripMenuItem.Click += new System.EventHandler(this.jENISToolStripMenuItem_Click);
             // 
             // gRADEToolStripMenuItem
             // 
             this.gRADEToolStripMenuItem.Name = "gRADEToolStripMenuItem";
-            this.gRADEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gRADEToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.gRADEToolStripMenuItem.Text = "GRADE";
             this.gRADEToolStripMenuItem.Click += new System.EventHandler(this.gRADEToolStripMenuItem_Click);
             // 
             // hEWANToolStripMenuItem
             // 
             this.hEWANToolStripMenuItem.Name = "hEWANToolStripMenuItem";
-            this.hEWANToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hEWANToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.hEWANToolStripMenuItem.Text = "HEWAN";
             this.hEWANToolStripMenuItem.Click += new System.EventHandler(this.hEWANToolStripMenuItem_Click);
             // 
             // hargaToolStripMenuItem
             // 
             this.hargaToolStripMenuItem.Name = "hargaToolStripMenuItem";
-            this.hargaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hargaToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.hargaToolStripMenuItem.Text = "Harga";
             this.hargaToolStripMenuItem.Click += new System.EventHandler(this.hargaToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.customerToolStripMenuItem.Text = "Customer";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
+            // 
+            // kandangToolStripMenuItem
+            // 
+            this.kandangToolStripMenuItem.Name = "kandangToolStripMenuItem";
+            this.kandangToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.kandangToolStripMenuItem.Text = "Kandang";
+            this.kandangToolStripMenuItem.Click += new System.EventHandler(this.kandangToolStripMenuItem_Click);
+            // 
+            // posMutasiStokToolStripMenuItem
+            // 
+            this.posMutasiStokToolStripMenuItem.Name = "posMutasiStokToolStripMenuItem";
+            this.posMutasiStokToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.posMutasiStokToolStripMenuItem.Text = "Pos Mutasi Stok";
+            this.posMutasiStokToolStripMenuItem.Click += new System.EventHandler(this.posMutasiStokToolStripMenuItem_Click);
             // 
             // FrmMiniMenu
             // 
@@ -130,5 +148,7 @@
         private System.Windows.Forms.ToolStripMenuItem hEWANToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hargaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kandangToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem posMutasiStokToolStripMenuItem;
     }
 }
