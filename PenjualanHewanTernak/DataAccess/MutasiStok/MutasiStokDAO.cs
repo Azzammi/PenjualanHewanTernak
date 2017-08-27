@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PenjualanHewanTernak.Model;
 using PenjualanHewanTernak.Properties;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace PenjualanHewanTernak.DataAccess
 {
@@ -21,6 +22,7 @@ namespace PenjualanHewanTernak.DataAccess
         {
             m_ConnectionString = Settings.Default.ConnectionString;
         }
+       
         /// <summary>
         /// 
         /// </summary>
@@ -94,6 +96,7 @@ namespace PenjualanHewanTernak.DataAccess
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
         protected void AddOrUpdateDatabaseRecord(string sql, MutasiStokItem itemMaster)
         {
             try
@@ -117,10 +120,12 @@ namespace PenjualanHewanTernak.DataAccess
                 if(isPenguranganStok != true)
                 {
                     command.Parameters.AddWithValue("@perubahanStok", itemMaster.Masuk);
+                    AddStock(itemMaster);
                 }
                 else
                 {
                     command.Parameters.AddWithValue("@perubahanStok", itemMaster.Keluar);
+                    DecrementStock(itemMaster);
                 }                
 
                 //execute the command
@@ -137,13 +142,71 @@ namespace PenjualanHewanTernak.DataAccess
                 MessageBox.Show(ex.Message.ToString());
             }
         }
-        protected void AddStock()
+        protected void AddStock(MutasiStokItem addStock)
         {
+            try
+            {
+                //Create and open a connection
+                SqlConnection connection = new SqlConnection(m_ConnectionString);
+                connection.Open();
 
+                //create and configure a command
+                SqlCommand command = new SqlCommand("SP_TAMBAH_STOCK", connection);
+
+                //Adding value through parameter
+                command.CommandType = System.Data.CommandType.Text;
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@kodeKandang", addStock.KodeKandang);
+                command.Parameters.AddWithValue("@kodeHewan", addStock.KodeHewan);
+                command.Parameters.AddWithValue("@jumlah", addStock.Masuk);
+                     
+                
+                //execute the command
+                command.ExecuteNonQuery();
+
+                //Close and dispose
+                command.Dispose();
+                connection.Close();
+                connection.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
-        protected void DecrementStock()
+        protected void DecrementStock(MutasiStokItem deleteStock)
         {
+            try
+            {
+                //Create and open a connection
+                SqlConnection connection = new SqlConnection(m_ConnectionString);
+                connection.Open();
 
+                //create and configure a command
+                SqlCommand command = new SqlCommand("SP_KURANGI_STOK", connection);
+
+                //Adding value through parameter
+                command.CommandType = System.Data.CommandType.StoredProcedure;               
+
+                command.Parameters.AddWithValue("@kodeKandang", deleteStock.KodeKandang);
+                command.Parameters.AddWithValue("@kodeHewan", deleteStock.KodeHewan);
+                command.Parameters.AddWithValue("@jumlah", deleteStock.Keluar);
+
+
+                //execute the command
+                command.ExecuteNonQuery();
+
+                //Close and dispose
+                command.Dispose();
+                connection.Close();
+                connection.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
         #endregion
     }

@@ -56,16 +56,16 @@
             this.keluarTextBox = new System.Windows.Forms.TextBox();
             this.keteranganTextBox = new System.Windows.Forms.TextBox();
             this.kodeHewanComboBox = new System.Windows.Forms.ComboBox();
+            this.cattleItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kodeKandangComboBox = new System.Windows.Forms.ComboBox();
+            this.kandangItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masukTextBox = new System.Windows.Forms.TextBox();
             this.nomorTransaksiTextBox = new System.Windows.Forms.TextBox();
             this.noRefComboBox = new System.Windows.Forms.ComboBox();
+            this.posMutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stokAwalTextBox = new System.Windows.Forms.TextBox();
             this.tglTransaksiDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.posMutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cattleItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kandangItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             keluarLabel = new System.Windows.Forms.Label();
             keteranganLabel = new System.Windows.Forms.Label();
             kodeHewanLabel = new System.Windows.Forms.Label();
@@ -78,9 +78,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingNavigator)).BeginInit();
             this.mutasiStokItemBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // keluarLabel
@@ -194,7 +194,7 @@
             this.mutasiStokItemBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.mutasiStokItemBindingNavigator.Name = "mutasiStokItemBindingNavigator";
             this.mutasiStokItemBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.mutasiStokItemBindingNavigator.Size = new System.Drawing.Size(830, 25);
+            this.mutasiStokItemBindingNavigator.Size = new System.Drawing.Size(408, 25);
             this.mutasiStokItemBindingNavigator.TabIndex = 0;
             this.mutasiStokItemBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -321,6 +321,10 @@
             this.kodeHewanComboBox.TabIndex = 6;
             this.kodeHewanComboBox.ValueMember = "KodeHewan";
             // 
+            // cattleItemBindingSource
+            // 
+            this.cattleItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.CattleItem);
+            // 
             // kodeKandangComboBox
             // 
             this.kodeKandangComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "KodeKandang", true));
@@ -333,6 +337,10 @@
             this.kodeKandangComboBox.Size = new System.Drawing.Size(200, 21);
             this.kodeKandangComboBox.TabIndex = 8;
             this.kodeKandangComboBox.ValueMember = "KodeKandang";
+            // 
+            // kandangItemBindingSource
+            // 
+            this.kandangItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.KandangItem);
             // 
             // masukTextBox
             // 
@@ -363,6 +371,10 @@
             this.noRefComboBox.TabIndex = 14;
             this.noRefComboBox.ValueMember = "NoRef";
             // 
+            // posMutasiStokItemBindingSource
+            // 
+            this.posMutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.PosMutasiStokItem);
+            // 
             // stokAwalTextBox
             // 
             this.stokAwalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "StokAwal", true));
@@ -385,30 +397,18 @@
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.posMutasiStokItemBindingSource, "IsPemasukan", true));
             this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.posMutasiStokItemBindingSource, "IsPemasukan", true));
-            this.checkBox1.Location = new System.Drawing.Point(392, 169);
+            this.checkBox1.Location = new System.Drawing.Point(336, 161);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(65, 31);
             this.checkBox1.TabIndex = 19;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // posMutasiStokItemBindingSource
-            // 
-            this.posMutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.PosMutasiStokItem);
-            // 
-            // cattleItemBindingSource
-            // 
-            this.cattleItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.CattleItem);
-            // 
-            // kandangItemBindingSource
-            // 
-            this.kandangItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.KandangItem);
-            // 
             // FrmMutasiStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 362);
+            this.ClientSize = new System.Drawing.Size(408, 307);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(keluarLabel);
             this.Controls.Add(this.keluarTextBox);
@@ -435,9 +435,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingNavigator)).EndInit();
             this.mutasiStokItemBindingNavigator.ResumeLayout(false);
             this.mutasiStokItemBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

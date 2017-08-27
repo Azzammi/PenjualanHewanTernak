@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FSCollections;
+using PenjualanHewanTernak.DataAccess;
 
 namespace PenjualanHewanTernak.Model
 {
@@ -74,7 +75,16 @@ namespace PenjualanHewanTernak.Model
         #endregion
 
         #region Methods
-
+        internal void CreateDatabaseRecord()
+        {
+            MutasiStokDAO dao = new MutasiStokDAO(false);
+            dao.CreateDatabaseRecord(this);
+        }
+        internal void DeleteDatabaseRecord()
+        {
+            MutasiStokDAO dao = new MutasiStokDAO(true);
+            dao.DeleteDatabaseRecord(this.NomorTransaksi);
+        }
         #endregion
     }
 }
