@@ -133,16 +133,12 @@ namespace FSCollections
             List<T> items = this.Items as List<T>;
 
             //Get the type and convert it
-            //if(key.GetType() == typeof(string))
-            //{
-            //    Convert.ToString(key);
-            if (key != DBNull.Value)
-            {
-                string Key = (string)key;
-                Key = Key.Trim();
-                Key = Key.ToLower();
-            }
-            //}          
+
+            string Key = null;
+            Key = key.ToString();
+
+            Key = Key.Trim();
+            Key = Key.ToLower();
 
             // Traverse list for value
             foreach (T item in items)
@@ -154,7 +150,7 @@ namespace FSCollections
 
                 // If value is the search value, return the index of the data item
                 // Remove whitespace in search value, for accurate searching ---Luthfi
-                if (key == value) return IndexOf(item);
+                if (Key == value) return IndexOf(item);
 
             }
             return -1;
