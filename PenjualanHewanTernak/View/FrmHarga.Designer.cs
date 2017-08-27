@@ -35,6 +35,8 @@
             System.Windows.Forms.Label kodeGradeLabel;
             System.Windows.Forms.Label kodeHewanLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHarga));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.hargaItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hargaItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -54,7 +56,6 @@
             this.gradeItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cattleItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statCheckBox = new System.Windows.Forms.CheckBox();
-            this.hargaItemListBox = new System.Windows.Forms.ListBox();
             this.gantiHargaBtn = new System.Windows.Forms.Button();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.CancelBtn = new System.Windows.Forms.ToolStripButton();
@@ -63,6 +64,15 @@
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.kodeGradeComboBox = new System.Windows.Forms.ComboBox();
             this.kodeHewanComboBox = new System.Windows.Forms.ComboBox();
+            this.hargaItemDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             beforePriceLabel = new System.Windows.Forms.Label();
             currentPriceLabel = new System.Windows.Forms.Label();
             statLabel = new System.Windows.Forms.Label();
@@ -74,12 +84,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gradeItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).BeginInit();
             this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hargaItemDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // beforePriceLabel
             // 
             beforePriceLabel.AutoSize = true;
-            beforePriceLabel.Location = new System.Drawing.Point(342, 106);
+            beforePriceLabel.Location = new System.Drawing.Point(30, 110);
             beforePriceLabel.Name = "beforePriceLabel";
             beforePriceLabel.Size = new System.Drawing.Size(68, 13);
             beforePriceLabel.TabIndex = 1;
@@ -88,7 +99,7 @@
             // currentPriceLabel
             // 
             currentPriceLabel.AutoSize = true;
-            currentPriceLabel.Location = new System.Drawing.Point(342, 132);
+            currentPriceLabel.Location = new System.Drawing.Point(30, 136);
             currentPriceLabel.Name = "currentPriceLabel";
             currentPriceLabel.Size = new System.Drawing.Size(71, 13);
             currentPriceLabel.TabIndex = 5;
@@ -97,7 +108,7 @@
             // statLabel
             // 
             statLabel.AutoSize = true;
-            statLabel.Location = new System.Drawing.Point(342, 160);
+            statLabel.Location = new System.Drawing.Point(30, 164);
             statLabel.Name = "statLabel";
             statLabel.Size = new System.Drawing.Size(29, 13);
             statLabel.TabIndex = 13;
@@ -106,20 +117,20 @@
             // kodeGradeLabel
             // 
             kodeGradeLabel.AutoSize = true;
-            kodeGradeLabel.Location = new System.Drawing.Point(342, 47);
+            kodeGradeLabel.Location = new System.Drawing.Point(30, 51);
             kodeGradeLabel.Name = "kodeGradeLabel";
-            kodeGradeLabel.Size = new System.Drawing.Size(67, 13);
+            kodeGradeLabel.Size = new System.Drawing.Size(39, 13);
             kodeGradeLabel.TabIndex = 17;
-            kodeGradeLabel.Text = "Kode Grade:";
+            kodeGradeLabel.Text = "Grade:";
             // 
             // kodeHewanLabel
             // 
             kodeHewanLabel.AutoSize = true;
-            kodeHewanLabel.Location = new System.Drawing.Point(342, 74);
+            kodeHewanLabel.Location = new System.Drawing.Point(30, 78);
             kodeHewanLabel.Name = "kodeHewanLabel";
-            kodeHewanLabel.Size = new System.Drawing.Size(72, 13);
+            kodeHewanLabel.Size = new System.Drawing.Size(44, 13);
             kodeHewanLabel.TabIndex = 18;
-            kodeHewanLabel.Text = "Kode Hewan:";
+            kodeHewanLabel.Text = "Hewan:";
             // 
             // hargaItemBindingSource
             // 
@@ -149,7 +160,7 @@
             this.hargaItemBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.hargaItemBindingNavigator.Name = "hargaItemBindingNavigator";
             this.hargaItemBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.hargaItemBindingNavigator.Size = new System.Drawing.Size(684, 28);
+            this.hargaItemBindingNavigator.Size = new System.Drawing.Size(772, 28);
             this.hargaItemBindingNavigator.TabIndex = 0;
             this.hargaItemBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -231,7 +242,7 @@
             // beforePriceTextBox
             // 
             this.beforePriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hargaItemBindingSource, "BeforePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C0"));
-            this.beforePriceTextBox.Location = new System.Drawing.Point(445, 103);
+            this.beforePriceTextBox.Location = new System.Drawing.Point(133, 107);
             this.beforePriceTextBox.Name = "beforePriceTextBox";
             this.beforePriceTextBox.Size = new System.Drawing.Size(81, 20);
             this.beforePriceTextBox.TabIndex = 2;
@@ -240,7 +251,7 @@
             // 
             this.beforePriceDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.hargaItemBindingSource, "BeforePriceDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.beforePriceDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.beforePriceDateDateTimePicker.Location = new System.Drawing.Point(528, 103);
+            this.beforePriceDateDateTimePicker.Location = new System.Drawing.Point(216, 107);
             this.beforePriceDateDateTimePicker.Name = "beforePriceDateDateTimePicker";
             this.beforePriceDateDateTimePicker.Size = new System.Drawing.Size(117, 20);
             this.beforePriceDateDateTimePicker.TabIndex = 4;
@@ -248,7 +259,7 @@
             // currentPriceTextBox
             // 
             this.currentPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hargaItemBindingSource, "CurrentPrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C0"));
-            this.currentPriceTextBox.Location = new System.Drawing.Point(445, 129);
+            this.currentPriceTextBox.Location = new System.Drawing.Point(133, 133);
             this.currentPriceTextBox.Name = "currentPriceTextBox";
             this.currentPriceTextBox.Size = new System.Drawing.Size(81, 20);
             this.currentPriceTextBox.TabIndex = 6;
@@ -257,7 +268,7 @@
             // 
             this.currentPriceDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.hargaItemBindingSource, "CurrentPriceDate", true));
             this.currentPriceDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.currentPriceDateDateTimePicker.Location = new System.Drawing.Point(528, 129);
+            this.currentPriceDateDateTimePicker.Location = new System.Drawing.Point(216, 133);
             this.currentPriceDateDateTimePicker.Name = "currentPriceDateDateTimePicker";
             this.currentPriceDateDateTimePicker.Size = new System.Drawing.Size(117, 20);
             this.currentPriceDateDateTimePicker.TabIndex = 8;
@@ -268,32 +279,22 @@
             // 
             // cattleItemBindingSource
             // 
+            this.cattleItemBindingSource.AllowNew = false;
             this.cattleItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.CattleItem);
             // 
             // statCheckBox
             // 
             this.statCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.hargaItemBindingSource, "Stat", true));
-            this.statCheckBox.Location = new System.Drawing.Point(445, 155);
+            this.statCheckBox.Location = new System.Drawing.Point(133, 159);
             this.statCheckBox.Name = "statCheckBox";
             this.statCheckBox.Size = new System.Drawing.Size(200, 24);
             this.statCheckBox.TabIndex = 14;
             this.statCheckBox.Text = "checkBox1";
             this.statCheckBox.UseVisualStyleBackColor = true;
             // 
-            // hargaItemListBox
-            // 
-            this.hargaItemListBox.DataSource = this.hargaItemBindingSource;
-            this.hargaItemListBox.DisplayMember = "KodeGrade";
-            this.hargaItemListBox.FormattingEnabled = true;
-            this.hargaItemListBox.Location = new System.Drawing.Point(12, 31);
-            this.hargaItemListBox.Name = "hargaItemListBox";
-            this.hargaItemListBox.Size = new System.Drawing.Size(324, 251);
-            this.hargaItemListBox.TabIndex = 15;
-            this.hargaItemListBox.ValueMember = "BeforePrice";
-            // 
             // gantiHargaBtn
             // 
-            this.gantiHargaBtn.Location = new System.Drawing.Point(495, 185);
+            this.gantiHargaBtn.Location = new System.Drawing.Point(183, 189);
             this.gantiHargaBtn.Name = "gantiHargaBtn";
             this.gantiHargaBtn.Size = new System.Drawing.Size(150, 23);
             this.gantiHargaBtn.TabIndex = 16;
@@ -309,9 +310,9 @@
             this.DeleteBtn,
             this.SaveBtn,
             this.AddBtn});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 302);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 288);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(684, 38);
+            this.toolStrip2.Size = new System.Drawing.Size(772, 38);
             this.toolStrip2.TabIndex = 17;
             this.toolStrip2.TabStop = true;
             this.toolStrip2.Text = "toolStrip2";
@@ -363,11 +364,13 @@
             // 
             // kodeGradeComboBox
             // 
+            this.kodeGradeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.hargaItemBindingSource, "KodeGrade", true));
             this.kodeGradeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hargaItemBindingSource, "KodeGrade", true));
             this.kodeGradeComboBox.DataSource = this.gradeItemBindingSource;
-            this.kodeGradeComboBox.DisplayMember = "KodeGrade";
+            this.kodeGradeComboBox.DisplayMember = "Keterangan";
+            this.kodeGradeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kodeGradeComboBox.FormattingEnabled = true;
-            this.kodeGradeComboBox.Location = new System.Drawing.Point(445, 44);
+            this.kodeGradeComboBox.Location = new System.Drawing.Point(133, 48);
             this.kodeGradeComboBox.Name = "kodeGradeComboBox";
             this.kodeGradeComboBox.Size = new System.Drawing.Size(121, 21);
             this.kodeGradeComboBox.TabIndex = 18;
@@ -375,29 +378,114 @@
             // 
             // kodeHewanComboBox
             // 
-            this.kodeHewanComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cattleItemBindingSource, "KodeHewan", true));
+            this.kodeHewanComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Wow\t",
+            "Maka",
+            "asdasd"});
+            this.kodeHewanComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.kodeHewanComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.kodeHewanComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.hargaItemBindingSource, "KodeHewan", true));
             this.kodeHewanComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hargaItemBindingSource, "KodeHewan", true));
             this.kodeHewanComboBox.DataSource = this.cattleItemBindingSource;
-            this.kodeHewanComboBox.DisplayMember = "KodeHewan";
+            this.kodeHewanComboBox.DisplayMember = "NamaHewan";
             this.kodeHewanComboBox.FormattingEnabled = true;
-            this.kodeHewanComboBox.Location = new System.Drawing.Point(445, 71);
+            this.kodeHewanComboBox.Location = new System.Drawing.Point(133, 75);
             this.kodeHewanComboBox.Name = "kodeHewanComboBox";
             this.kodeHewanComboBox.Size = new System.Drawing.Size(121, 21);
             this.kodeHewanComboBox.TabIndex = 19;
             this.kodeHewanComboBox.ValueMember = "KodeHewan";
             // 
+            // hargaItemDataGridView
+            // 
+            this.hargaItemDataGridView.AllowUserToAddRows = false;
+            this.hargaItemDataGridView.AllowUserToDeleteRows = false;
+            this.hargaItemDataGridView.AutoGenerateColumns = false;
+            this.hargaItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.hargaItemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewCheckBoxColumn1});
+            this.hargaItemDataGridView.DataSource = this.hargaItemBindingSource;
+            this.hargaItemDataGridView.Location = new System.Drawing.Point(349, 48);
+            this.hargaItemDataGridView.Name = "hargaItemDataGridView";
+            this.hargaItemDataGridView.Size = new System.Drawing.Size(403, 220);
+            this.hargaItemDataGridView.TabIndex = 19;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "KodeHewan";
+            this.dataGridViewTextBoxColumn1.HeaderText = "KodeHewan";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "KodeGrade";
+            this.dataGridViewTextBoxColumn2.HeaderText = "KodeGrade";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "BeforePriceDate";
+            this.dataGridViewTextBoxColumn3.HeaderText = "BeforePriceDate";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "BeforePrice";
+            dataGridViewCellStyle1.Format = "C0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn4.HeaderText = "BeforePrice";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "CurrentPriceDate";
+            this.dataGridViewTextBoxColumn5.HeaderText = "CurrentPriceDate";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "CurrentPrice";
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn6.HeaderText = "CurrentPrice";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Stat";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Stat";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(249, 219);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmHarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 340);
+            this.ClientSize = new System.Drawing.Size(772, 326);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.hargaItemDataGridView);
             this.Controls.Add(kodeHewanLabel);
             this.Controls.Add(this.kodeHewanComboBox);
             this.Controls.Add(kodeGradeLabel);
             this.Controls.Add(this.kodeGradeComboBox);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gantiHargaBtn);
-            this.Controls.Add(this.hargaItemListBox);
             this.Controls.Add(beforePriceLabel);
             this.Controls.Add(this.beforePriceTextBox);
             this.Controls.Add(this.beforePriceDateDateTimePicker);
@@ -407,9 +495,11 @@
             this.Controls.Add(statLabel);
             this.Controls.Add(this.statCheckBox);
             this.Controls.Add(this.hargaItemBindingNavigator);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmHarga";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmHarga";
+            this.Text = "Harga";
             this.Load += new System.EventHandler(this.FrmHarga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.hargaItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hargaItemBindingNavigator)).EndInit();
@@ -419,6 +509,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hargaItemDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,7 +533,6 @@
         private System.Windows.Forms.TextBox currentPriceTextBox;
         private System.Windows.Forms.DateTimePicker currentPriceDateDateTimePicker;
         private System.Windows.Forms.CheckBox statCheckBox;
-        private System.Windows.Forms.ListBox hargaItemListBox;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Button gantiHargaBtn;
         private System.Windows.Forms.BindingSource gradeItemBindingSource;
@@ -454,5 +544,14 @@
         private System.Windows.Forms.ToolStripButton AddBtn;
         private System.Windows.Forms.ComboBox kodeGradeComboBox;
         private System.Windows.Forms.ComboBox kodeHewanComboBox;
+        private System.Windows.Forms.DataGridView hargaItemDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Button button1;
     }
 }

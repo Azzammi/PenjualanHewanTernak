@@ -85,6 +85,9 @@
     <Compile Include="Controller\PosMutasiStok\CommandGetPosMutasiStok.cs" />
     <Compile Include="Controller\PosMutasiStok\CommandInsertPosMutasiStok.cs" />
     <Compile Include="Controller\PosMutasiStok\CommandUpdatePosMutasiStok.cs" />
+    <Compile Include="Custom Control\comboProperty.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataAccess\Cattle\CattleItemDAO.cs" />
     <Compile Include="DataAccess\Cattle\CattleListDAO.cs" />
     <Compile Include="DataAccess\ChildrenItemDAO.cs" />
@@ -99,6 +102,7 @@
     <Compile Include="DataAccess\Jenis\JenisListDAO.cs" />
     <Compile Include="DataAccess\Kandang\KandangItemDAO.cs" />
     <Compile Include="DataAccess\Kandang\KandangListDAO.cs" />
+    <Compile Include="DataAccess\MutasiStokDAO.cs" />
     <Compile Include="DataAccess\PosMutasiStok\PosMutasiStokItemDAO.cs" />
     <Compile Include="DataAccess\PosMutasiStok\PosMutasiStokListDAO.cs" />
     <Compile Include="DataAccess\StockItemDAO.cs" />
@@ -183,6 +187,12 @@
     <Compile Include="View\FrmMiniMenu.Designer.cs">
       <DependentUpon>FrmMiniMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmMutasiStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMutasiStok.Designer.cs">
+      <DependentUpon>FrmMutasiStok.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmPosMutasiStok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +239,9 @@
       <DependentUpon>FrmMiniMenu.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="DataAccess\Customer\CustomerItemDAO.cs" />
+    <EmbeddedResource Include="View\FrmMutasiStok.resx">
+      <DependentUpon>FrmMutasiStok.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPosMutasiStok.resx">
       <DependentUpon>FrmPosMutasiStok.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +252,7 @@
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.HargaItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.JenisItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.KandangItem.datasource" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.MutasiStokItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.PosMutasiStokItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

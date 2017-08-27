@@ -136,9 +136,12 @@ namespace FSCollections
             //if(key.GetType() == typeof(string))
             //{
             //    Convert.ToString(key);
-            string Key = (string)key;
-            Key = Key.Trim();
-            Key = Key.ToLower();
+            if (key != DBNull.Value)
+            {
+                string Key = (string)key;
+                Key = Key.Trim();
+                Key = Key.ToLower();
+            }
             //}          
 
             // Traverse list for value
@@ -151,7 +154,7 @@ namespace FSCollections
 
                 // If value is the search value, return the index of the data item
                 // Remove whitespace in search value, for accurate searching ---Luthfi
-                if (Key == value) return IndexOf(item);
+                if (key == value) return IndexOf(item);
 
             }
             return -1;

@@ -11,6 +11,7 @@ namespace PenjualanHewanTernak.Model
     public class HargaItem : FSBindingItem
     {
         #region Declarations
+        private CattleItem hewanList;
         private string kodeHewan;
         private string kodeGrade;
         private DateTime beforePriceDate;
@@ -21,7 +22,7 @@ namespace PenjualanHewanTernak.Model
         #endregion
 
         #region Constructor
-
+        //'public HargaItem
         #endregion
 
         #region Properties

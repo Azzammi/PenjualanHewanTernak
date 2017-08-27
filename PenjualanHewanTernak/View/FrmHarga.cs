@@ -66,7 +66,7 @@ namespace PenjualanHewanTernak.View
         {
             if (m_ItemList == null) return;
 
-            HargaItem m_item = (HargaItem)hargaItemBindingSource.Current;
+            HargaItem m_item = (HargaItem)hargaItemBindingSource.Current;      
 
             if (m_item == null) return;
 
@@ -110,9 +110,20 @@ namespace PenjualanHewanTernak.View
             var pesan = MessageBox.Show("Apakah Anda Yakin Ingin Mengganti Harga ? ", "Ganti Harga", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (pesan == DialogResult.Yes)
             {
-                CommandGantiHarga gantiharga = new CommandGantiHarga(m_item);
-                HargaItem newHarga = (HargaItem)m_AppController.ExecuteCommand(gantiharga);
+                //CommandGantiHarga gantiharga = new CommandGantiHarga(m_item);
+                //HargaItem newHarga = (HargaItem)m_AppController.ExecuteCommand(gantiharga);
+                beforePriceTextBox.Text = currentPriceTextBox.Text;
+                beforePriceDateDateTimePicker.Value = currentPriceDateDateTimePicker.Value;
+                currentPriceTextBox.Text = "0";
+                currentPriceDateDateTimePicker.Value = DateTime.Now;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(kodeHewanComboBox.SelectedValue.ToString());
+            //kodeHewanComboBox.DataBindings.Add("SelectedValue", cattleItemBindingSource, "KodeHewan");
+
         }
     }
 }

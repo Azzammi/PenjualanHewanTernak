@@ -47,7 +47,7 @@ namespace PenjualanHewanTernak.DataAccess
 
         internal void DeleteDatabaseRecord(string gradeCode, string cattleCode)
         {
-            string sql = "Delete From Harga Where KodeGrade = @codeGrade and KodeHewan = @code";
+            string sql = "Delete From PRIC Where KodeGrade = @codeGrade and KodeHewan = @code";
             try
             {
                 //Create and open a connection
