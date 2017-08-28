@@ -63,5 +63,11 @@ namespace PenjualanHewanTernak.View
             FrmPosMutasiStok form = new FrmPosMutasiStok();
             form.ShowDialog();
         }
+
+        private void mutasiStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMutasiStok form = new FrmMutasiStok();
+            form.ShowDialog();
+        }
     }
 }

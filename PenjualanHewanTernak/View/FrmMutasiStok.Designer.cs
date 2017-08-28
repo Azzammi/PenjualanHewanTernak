@@ -36,14 +36,11 @@
             System.Windows.Forms.Label masukLabel;
             System.Windows.Forms.Label nomorTransaksiLabel;
             System.Windows.Forms.Label noRefLabel;
-            System.Windows.Forms.Label stokAwalLabel;
             System.Windows.Forms.Label tglTransaksiLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMutasiStok));
             this.mutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mutasiStokItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -52,7 +49,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.mutasiStokItemBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.keluarTextBox = new System.Windows.Forms.TextBox();
             this.keteranganTextBox = new System.Windows.Forms.TextBox();
             this.kodeHewanComboBox = new System.Windows.Forms.ComboBox();
@@ -63,9 +59,13 @@
             this.nomorTransaksiTextBox = new System.Windows.Forms.TextBox();
             this.noRefComboBox = new System.Windows.Forms.ComboBox();
             this.posMutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stokAwalTextBox = new System.Windows.Forms.TextBox();
             this.tglTransaksiDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.CancelBtn = new System.Windows.Forms.ToolStripButton();
+            this.DeleteBtn = new System.Windows.Forms.ToolStripButton();
+            this.SaveBtn = new System.Windows.Forms.ToolStripButton();
+            this.AddBtn = new System.Windows.Forms.ToolStripButton();
             keluarLabel = new System.Windows.Forms.Label();
             keteranganLabel = new System.Windows.Forms.Label();
             kodeHewanLabel = new System.Windows.Forms.Label();
@@ -73,7 +73,6 @@
             masukLabel = new System.Windows.Forms.Label();
             nomorTransaksiLabel = new System.Windows.Forms.Label();
             noRefLabel = new System.Windows.Forms.Label();
-            stokAwalLabel = new System.Windows.Forms.Label();
             tglTransaksiLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingNavigator)).BeginInit();
@@ -81,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // keluarLabel
@@ -146,19 +146,10 @@
             noRefLabel.TabIndex = 13;
             noRefLabel.Text = "No Ref:";
             // 
-            // stokAwalLabel
-            // 
-            stokAwalLabel.AutoSize = true;
-            stokAwalLabel.Location = new System.Drawing.Point(34, 222);
-            stokAwalLabel.Name = "stokAwalLabel";
-            stokAwalLabel.Size = new System.Drawing.Size(58, 13);
-            stokAwalLabel.TabIndex = 15;
-            stokAwalLabel.Text = "Stok Awal:";
-            // 
             // tglTransaksiLabel
             // 
             tglTransaksiLabel.AutoSize = true;
-            tglTransaksiLabel.Location = new System.Drawing.Point(34, 249);
+            tglTransaksiLabel.Location = new System.Drawing.Point(34, 223);
             tglTransaksiLabel.Name = "tglTransaksiLabel";
             tglTransaksiLabel.Size = new System.Drawing.Size(74, 13);
             tglTransaksiLabel.TabIndex = 17;
@@ -170,10 +161,10 @@
             // 
             // mutasiStokItemBindingNavigator
             // 
-            this.mutasiStokItemBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.mutasiStokItemBindingNavigator.AddNewItem = null;
             this.mutasiStokItemBindingNavigator.BindingSource = this.mutasiStokItemBindingSource;
             this.mutasiStokItemBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.mutasiStokItemBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.mutasiStokItemBindingNavigator.DeleteItem = null;
             this.mutasiStokItemBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -183,10 +174,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.mutasiStokItemBindingNavigatorSaveItem});
+            this.bindingNavigatorSeparator2});
             this.mutasiStokItemBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.mutasiStokItemBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.mutasiStokItemBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -194,18 +182,9 @@
             this.mutasiStokItemBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.mutasiStokItemBindingNavigator.Name = "mutasiStokItemBindingNavigator";
             this.mutasiStokItemBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.mutasiStokItemBindingNavigator.Size = new System.Drawing.Size(408, 25);
+            this.mutasiStokItemBindingNavigator.Size = new System.Drawing.Size(433, 25);
             this.mutasiStokItemBindingNavigator.TabIndex = 0;
             this.mutasiStokItemBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
@@ -213,15 +192,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -282,15 +252,6 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // mutasiStokItemBindingNavigatorSaveItem
-            // 
-            this.mutasiStokItemBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.mutasiStokItemBindingNavigatorSaveItem.Enabled = false;
-            this.mutasiStokItemBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("mutasiStokItemBindingNavigatorSaveItem.Image")));
-            this.mutasiStokItemBindingNavigatorSaveItem.Name = "mutasiStokItemBindingNavigatorSaveItem";
-            this.mutasiStokItemBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.mutasiStokItemBindingNavigatorSaveItem.Text = "Save Data";
             // 
             // keluarTextBox
             // 
@@ -375,18 +336,10 @@
             // 
             this.posMutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.PosMutasiStokItem);
             // 
-            // stokAwalTextBox
-            // 
-            this.stokAwalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "StokAwal", true));
-            this.stokAwalTextBox.Location = new System.Drawing.Point(130, 219);
-            this.stokAwalTextBox.Name = "stokAwalTextBox";
-            this.stokAwalTextBox.Size = new System.Drawing.Size(200, 20);
-            this.stokAwalTextBox.TabIndex = 16;
-            // 
             // tglTransaksiDateTimePicker
             // 
             this.tglTransaksiDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mutasiStokItemBindingSource, "TglTransaksi", true));
-            this.tglTransaksiDateTimePicker.Location = new System.Drawing.Point(130, 245);
+            this.tglTransaksiDateTimePicker.Location = new System.Drawing.Point(130, 219);
             this.tglTransaksiDateTimePicker.Name = "tglTransaksiDateTimePicker";
             this.tglTransaksiDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.tglTransaksiDateTimePicker.TabIndex = 18;
@@ -394,21 +347,76 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.posMutasiStokItemBindingSource, "IsPemasukan", true));
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.posMutasiStokItemBindingSource, "IsPemasukan", true));
-            this.checkBox1.Location = new System.Drawing.Point(336, 161);
+            this.checkBox1.Location = new System.Drawing.Point(336, 194);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(65, 31);
+            this.checkBox1.Size = new System.Drawing.Size(90, 17);
             this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.Text = "Pengurangan";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CancelBtn,
+            this.DeleteBtn,
+            this.SaveBtn,
+            this.AddBtn});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 274);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(433, 38);
+            this.toolStrip1.TabIndex = 20;
+            this.toolStrip1.TabStop = true;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // CancelBtn
+            // 
+            this.CancelBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.CancelBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Close_Window_96px;
+            this.CancelBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(76, 35);
+            this.CancelBtn.Text = "Cancel / Exit";
+            this.CancelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.DeleteBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Delete_50px;
+            this.DeleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(57, 35);
+            this.DeleteBtn.Text = "Delete(s)";
+            this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.SaveBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Save_50px_1;
+            this.SaveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(51, 35);
+            this.SaveBtn.Text = "Simpan";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.AddBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Plus_96px;
+            this.AddBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(55, 35);
+            this.AddBtn.Text = "Tambah";
+            this.AddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // FrmMutasiStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 307);
+            this.ClientSize = new System.Drawing.Size(433, 312);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(keluarLabel);
             this.Controls.Add(this.keluarTextBox);
@@ -424,13 +432,14 @@
             this.Controls.Add(this.nomorTransaksiTextBox);
             this.Controls.Add(noRefLabel);
             this.Controls.Add(this.noRefComboBox);
-            this.Controls.Add(stokAwalLabel);
-            this.Controls.Add(this.stokAwalTextBox);
             this.Controls.Add(tglTransaksiLabel);
             this.Controls.Add(this.tglTransaksiDateTimePicker);
             this.Controls.Add(this.mutasiStokItemBindingNavigator);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmMutasiStok";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMutasiStok";
+            this.Load += new System.EventHandler(this.FrmMutasiStok_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingNavigator)).EndInit();
             this.mutasiStokItemBindingNavigator.ResumeLayout(false);
@@ -438,6 +447,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,9 +458,7 @@
 
         private System.Windows.Forms.BindingSource mutasiStokItemBindingSource;
         private System.Windows.Forms.BindingNavigator mutasiStokItemBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -458,7 +467,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton mutasiStokItemBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox keluarTextBox;
         private System.Windows.Forms.TextBox keteranganTextBox;
         private System.Windows.Forms.ComboBox kodeHewanComboBox;
@@ -466,11 +474,15 @@
         private System.Windows.Forms.TextBox masukTextBox;
         private System.Windows.Forms.TextBox nomorTransaksiTextBox;
         private System.Windows.Forms.ComboBox noRefComboBox;
-        private System.Windows.Forms.TextBox stokAwalTextBox;
         private System.Windows.Forms.DateTimePicker tglTransaksiDateTimePicker;
         private System.Windows.Forms.BindingSource cattleItemBindingSource;
         private System.Windows.Forms.BindingSource kandangItemBindingSource;
         private System.Windows.Forms.BindingSource posMutasiStokItemBindingSource;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton CancelBtn;
+        private System.Windows.Forms.ToolStripButton DeleteBtn;
+        private System.Windows.Forms.ToolStripButton SaveBtn;
+        private System.Windows.Forms.ToolStripButton AddBtn;
     }
 }

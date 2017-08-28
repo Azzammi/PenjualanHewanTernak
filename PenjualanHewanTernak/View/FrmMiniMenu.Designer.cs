@@ -38,6 +38,8 @@
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kandangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.posMutasiStokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mutasiStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.masterToolStripMenuItem});
+            this.masterToolStripMenuItem,
+            this.stockToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(627, 24);
@@ -121,6 +124,21 @@
             this.posMutasiStokToolStripMenuItem.Text = "Pos Mutasi Stok";
             this.posMutasiStokToolStripMenuItem.Click += new System.EventHandler(this.posMutasiStokToolStripMenuItem_Click);
             // 
+            // stockToolStripMenuItem
+            // 
+            this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mutasiStockToolStripMenuItem});
+            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.stockToolStripMenuItem.Text = "Stock";
+            // 
+            // mutasiStockToolStripMenuItem
+            // 
+            this.mutasiStockToolStripMenuItem.Name = "mutasiStockToolStripMenuItem";
+            this.mutasiStockToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mutasiStockToolStripMenuItem.Text = "Mutasi Stock";
+            this.mutasiStockToolStripMenuItem.Click += new System.EventHandler(this.mutasiStockToolStripMenuItem_Click);
+            // 
             // FrmMiniMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,5 +168,7 @@
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kandangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem posMutasiStokToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mutasiStockToolStripMenuItem;
     }
 }
