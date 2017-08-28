@@ -190,6 +190,7 @@
     <Compile Include="Model\Stok\StockList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\FormStatusChangedEvent.cs" />
     <Compile Include="View\FrmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +239,7 @@
     <Compile Include="View\FrmPosMutasiStok.Designer.cs">
       <DependentUpon>FrmPosMutasiStok.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\IFormCrud.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

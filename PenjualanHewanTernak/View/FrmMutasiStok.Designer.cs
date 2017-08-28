@@ -398,6 +398,7 @@
             this.SaveBtn.Size = new System.Drawing.Size(51, 35);
             this.SaveBtn.Text = "Simpan";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // AddBtn
             // 
@@ -410,6 +411,7 @@
             this.AddBtn.Text = "Tambah";
             this.AddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // FrmMutasiStok
             // 
@@ -456,6 +458,23 @@
 
         #endregion
 
+        #region Properties
+        public Status IsNewRow
+        {
+            get { return isNewRow; }
+            set {
+                //if(isNewRow != value)
+                //{
+                    isNewRow = value;
+
+                    //Call Method
+                    this.OnStatusChanged(new FormStatusChangedEventArgs(value));
+                //}                
+            }
+        }
+        #endregion
+
+        #region Declaration
         private System.Windows.Forms.BindingSource mutasiStokItemBindingSource;
         private System.Windows.Forms.BindingNavigator mutasiStokItemBindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -484,5 +503,11 @@
         private System.Windows.Forms.ToolStripButton DeleteBtn;
         private System.Windows.Forms.ToolStripButton SaveBtn;
         private System.Windows.Forms.ToolStripButton AddBtn;
+
+        //User Added
+        private Status isNewRow;
+        private event FormStatusChangedEventHandler statusChanged;
+        #endregion
+
     }
 }

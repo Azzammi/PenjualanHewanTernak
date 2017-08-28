@@ -24,12 +24,17 @@ namespace PenjualanHewanTernak.View
         PosMutasiStokList m_PosMutasiList;
         KandangList m_KandangList;
         CattleList m_CattleList;
-        bool isNewRow;
+
         #endregion
+
 
         public FrmMutasiStok()
         {
             InitializeComponent();
+            //
+            // status event changed
+            //
+            this.statusChanged += new FormStatusChangedEventHandler(this.StatusChanged);
         }
 
         private void FrmMutasiStok_Load(object sender, EventArgs e)
@@ -62,5 +67,37 @@ namespace PenjualanHewanTernak.View
             kandangItemBindingSource.DataSource = m_KandangList;
             cattleItemBindingSource.DataSource = m_CattleList;            
         }
+
+        protected void OnStatusChanged(FormStatusChangedEventArgs e)
+        {
+            //Report change
+            statusChanged?.Invoke(this, e);
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            mutasiStokItemBindingSource.AddNew();
+            IsNewRow = Status.addNewMode;
+        }
+
+        private void StatusChanged(object sender, FormStatusChangedEventArgs e)
+        {
+            if(e.FormStatus == Status.addNewMode)
+            {
+                AddBtn.Enabled = false;
+                DeleteBtn.Enabled = false;
+            }
+            else if(e.FormStatus == Status.editMode)
+            {
+                AddBtn.Enabled = true;
+                DeleteBtn.Enabled = true;
+            }
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            IsNewRow = Status.editMode;
+        }
     }
+
 }
