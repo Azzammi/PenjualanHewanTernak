@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label keluarLabel;
             System.Windows.Forms.Label keteranganLabel;
             System.Windows.Forms.Label kodeHewanLabel;
             System.Windows.Forms.Label kodeKandangLabel;
-            System.Windows.Forms.Label masukLabel;
-            System.Windows.Forms.Label nomorTransaksiLabel;
             System.Windows.Forms.Label noRefLabel;
             System.Windows.Forms.Label tglTransaksiLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMutasiStok));
-            this.mutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.keluarLabel = new System.Windows.Forms.Label();
+            this.masukLabel = new System.Windows.Forms.Label();
             this.mutasiStokItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.mutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -56,7 +55,6 @@
             this.kodeKandangComboBox = new System.Windows.Forms.ComboBox();
             this.kandangItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masukTextBox = new System.Windows.Forms.TextBox();
-            this.nomorTransaksiTextBox = new System.Windows.Forms.TextBox();
             this.noRefComboBox = new System.Windows.Forms.ComboBox();
             this.posMutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tglTransaksiDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -66,36 +64,24 @@
             this.DeleteBtn = new System.Windows.Forms.ToolStripButton();
             this.SaveBtn = new System.Windows.Forms.ToolStripButton();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
-            keluarLabel = new System.Windows.Forms.Label();
             keteranganLabel = new System.Windows.Forms.Label();
             kodeHewanLabel = new System.Windows.Forms.Label();
             kodeKandangLabel = new System.Windows.Forms.Label();
-            masukLabel = new System.Windows.Forms.Label();
-            nomorTransaksiLabel = new System.Windows.Forms.Label();
             noRefLabel = new System.Windows.Forms.Label();
             tglTransaksiLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingNavigator)).BeginInit();
             this.mutasiStokItemBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // keluarLabel
-            // 
-            keluarLabel.AutoSize = true;
-            keluarLabel.Location = new System.Drawing.Point(34, 37);
-            keluarLabel.Name = "keluarLabel";
-            keluarLabel.Size = new System.Drawing.Size(40, 13);
-            keluarLabel.TabIndex = 1;
-            keluarLabel.Text = "Keluar:";
-            // 
             // keteranganLabel
             // 
             keteranganLabel.AutoSize = true;
-            keteranganLabel.Location = new System.Drawing.Point(34, 63);
+            keteranganLabel.Location = new System.Drawing.Point(44, 209);
             keteranganLabel.Name = "keteranganLabel";
             keteranganLabel.Size = new System.Drawing.Size(65, 13);
             keteranganLabel.TabIndex = 3;
@@ -104,7 +90,7 @@
             // kodeHewanLabel
             // 
             kodeHewanLabel.AutoSize = true;
-            kodeHewanLabel.Location = new System.Drawing.Point(34, 89);
+            kodeHewanLabel.Location = new System.Drawing.Point(44, 103);
             kodeHewanLabel.Name = "kodeHewanLabel";
             kodeHewanLabel.Size = new System.Drawing.Size(72, 13);
             kodeHewanLabel.TabIndex = 5;
@@ -113,34 +99,16 @@
             // kodeKandangLabel
             // 
             kodeKandangLabel.AutoSize = true;
-            kodeKandangLabel.Location = new System.Drawing.Point(34, 116);
+            kodeKandangLabel.Location = new System.Drawing.Point(44, 130);
             kodeKandangLabel.Name = "kodeKandangLabel";
             kodeKandangLabel.Size = new System.Drawing.Size(81, 13);
             kodeKandangLabel.TabIndex = 7;
             kodeKandangLabel.Text = "Kode Kandang:";
             // 
-            // masukLabel
-            // 
-            masukLabel.AutoSize = true;
-            masukLabel.Location = new System.Drawing.Point(34, 143);
-            masukLabel.Name = "masukLabel";
-            masukLabel.Size = new System.Drawing.Size(42, 13);
-            masukLabel.TabIndex = 9;
-            masukLabel.Text = "Masuk:";
-            // 
-            // nomorTransaksiLabel
-            // 
-            nomorTransaksiLabel.AutoSize = true;
-            nomorTransaksiLabel.Location = new System.Drawing.Point(34, 169);
-            nomorTransaksiLabel.Name = "nomorTransaksiLabel";
-            nomorTransaksiLabel.Size = new System.Drawing.Size(90, 13);
-            nomorTransaksiLabel.TabIndex = 11;
-            nomorTransaksiLabel.Text = "Nomor Transaksi:";
-            // 
             // noRefLabel
             // 
             noRefLabel.AutoSize = true;
-            noRefLabel.Location = new System.Drawing.Point(34, 195);
+            noRefLabel.Location = new System.Drawing.Point(44, 45);
             noRefLabel.Name = "noRefLabel";
             noRefLabel.Size = new System.Drawing.Size(44, 13);
             noRefLabel.TabIndex = 13;
@@ -149,15 +117,29 @@
             // tglTransaksiLabel
             // 
             tglTransaksiLabel.AutoSize = true;
-            tglTransaksiLabel.Location = new System.Drawing.Point(34, 223);
+            tglTransaksiLabel.Location = new System.Drawing.Point(44, 73);
             tglTransaksiLabel.Name = "tglTransaksiLabel";
             tglTransaksiLabel.Size = new System.Drawing.Size(74, 13);
             tglTransaksiLabel.TabIndex = 17;
             tglTransaksiLabel.Text = "Tgl Transaksi:";
             // 
-            // mutasiStokItemBindingSource
+            // keluarLabel
             // 
-            this.mutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.MutasiStokItem);
+            this.keluarLabel.AutoSize = true;
+            this.keluarLabel.Location = new System.Drawing.Point(44, 183);
+            this.keluarLabel.Name = "keluarLabel";
+            this.keluarLabel.Size = new System.Drawing.Size(40, 13);
+            this.keluarLabel.TabIndex = 1;
+            this.keluarLabel.Text = "Keluar:";
+            // 
+            // masukLabel
+            // 
+            this.masukLabel.AutoSize = true;
+            this.masukLabel.Location = new System.Drawing.Point(44, 157);
+            this.masukLabel.Name = "masukLabel";
+            this.masukLabel.Size = new System.Drawing.Size(42, 13);
+            this.masukLabel.TabIndex = 9;
+            this.masukLabel.Text = "Masuk:";
             // 
             // mutasiStokItemBindingNavigator
             // 
@@ -182,9 +164,13 @@
             this.mutasiStokItemBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.mutasiStokItemBindingNavigator.Name = "mutasiStokItemBindingNavigator";
             this.mutasiStokItemBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.mutasiStokItemBindingNavigator.Size = new System.Drawing.Size(433, 25);
+            this.mutasiStokItemBindingNavigator.Size = new System.Drawing.Size(627, 25);
             this.mutasiStokItemBindingNavigator.TabIndex = 0;
             this.mutasiStokItemBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // mutasiStokItemBindingSource
+            // 
+            this.mutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.MutasiStokItem);
             // 
             // bindingNavigatorCountItem
             // 
@@ -256,15 +242,16 @@
             // keluarTextBox
             // 
             this.keluarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "Keluar", true));
-            this.keluarTextBox.Location = new System.Drawing.Point(130, 34);
+            this.keluarTextBox.Location = new System.Drawing.Point(140, 180);
             this.keluarTextBox.Name = "keluarTextBox";
             this.keluarTextBox.Size = new System.Drawing.Size(200, 20);
             this.keluarTextBox.TabIndex = 2;
+            this.keluarTextBox.TextChanged += new System.EventHandler(this.keluarTextBox_TextChanged);
             // 
             // keteranganTextBox
             // 
             this.keteranganTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "Keterangan", true));
-            this.keteranganTextBox.Location = new System.Drawing.Point(130, 60);
+            this.keteranganTextBox.Location = new System.Drawing.Point(140, 206);
             this.keteranganTextBox.Name = "keteranganTextBox";
             this.keteranganTextBox.Size = new System.Drawing.Size(200, 20);
             this.keteranganTextBox.TabIndex = 4;
@@ -272,11 +259,12 @@
             // kodeHewanComboBox
             // 
             this.kodeHewanComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "KodeHewan", true));
-            this.kodeHewanComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cattleItemBindingSource, "KodeHewan", true));
+            this.kodeHewanComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mutasiStokItemBindingSource, "KodeHewan", true));
             this.kodeHewanComboBox.DataSource = this.cattleItemBindingSource;
             this.kodeHewanComboBox.DisplayMember = "NamaHewan";
+            this.kodeHewanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kodeHewanComboBox.FormattingEnabled = true;
-            this.kodeHewanComboBox.Location = new System.Drawing.Point(130, 86);
+            this.kodeHewanComboBox.Location = new System.Drawing.Point(140, 100);
             this.kodeHewanComboBox.Name = "kodeHewanComboBox";
             this.kodeHewanComboBox.Size = new System.Drawing.Size(200, 21);
             this.kodeHewanComboBox.TabIndex = 6;
@@ -289,11 +277,12 @@
             // kodeKandangComboBox
             // 
             this.kodeKandangComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "KodeKandang", true));
-            this.kodeKandangComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.kandangItemBindingSource, "KodeKandang", true));
+            this.kodeKandangComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mutasiStokItemBindingSource, "KodeKandang", true));
             this.kodeKandangComboBox.DataSource = this.kandangItemBindingSource;
             this.kodeKandangComboBox.DisplayMember = "Keterangan";
+            this.kodeKandangComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kodeKandangComboBox.FormattingEnabled = true;
-            this.kodeKandangComboBox.Location = new System.Drawing.Point(130, 113);
+            this.kodeKandangComboBox.Location = new System.Drawing.Point(140, 127);
             this.kodeKandangComboBox.Name = "kodeKandangComboBox";
             this.kodeKandangComboBox.Size = new System.Drawing.Size(200, 21);
             this.kodeKandangComboBox.TabIndex = 8;
@@ -306,27 +295,20 @@
             // masukTextBox
             // 
             this.masukTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "Masuk", true));
-            this.masukTextBox.Location = new System.Drawing.Point(130, 140);
+            this.masukTextBox.Location = new System.Drawing.Point(140, 154);
             this.masukTextBox.Name = "masukTextBox";
             this.masukTextBox.Size = new System.Drawing.Size(200, 20);
             this.masukTextBox.TabIndex = 10;
             // 
-            // nomorTransaksiTextBox
-            // 
-            this.nomorTransaksiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "NomorTransaksi", true));
-            this.nomorTransaksiTextBox.Location = new System.Drawing.Point(130, 166);
-            this.nomorTransaksiTextBox.Name = "nomorTransaksiTextBox";
-            this.nomorTransaksiTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nomorTransaksiTextBox.TabIndex = 12;
-            // 
             // noRefComboBox
             // 
             this.noRefComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mutasiStokItemBindingSource, "NoRef", true));
-            this.noRefComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.posMutasiStokItemBindingSource, "NoRef", true));
+            this.noRefComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mutasiStokItemBindingSource, "NoRef", true));
             this.noRefComboBox.DataSource = this.posMutasiStokItemBindingSource;
             this.noRefComboBox.DisplayMember = "Keterangan";
+            this.noRefComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.noRefComboBox.FormattingEnabled = true;
-            this.noRefComboBox.Location = new System.Drawing.Point(130, 192);
+            this.noRefComboBox.Location = new System.Drawing.Point(140, 42);
             this.noRefComboBox.Name = "noRefComboBox";
             this.noRefComboBox.Size = new System.Drawing.Size(200, 21);
             this.noRefComboBox.TabIndex = 14;
@@ -339,7 +321,7 @@
             // tglTransaksiDateTimePicker
             // 
             this.tglTransaksiDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mutasiStokItemBindingSource, "TglTransaksi", true));
-            this.tglTransaksiDateTimePicker.Location = new System.Drawing.Point(130, 219);
+            this.tglTransaksiDateTimePicker.Location = new System.Drawing.Point(140, 69);
             this.tglTransaksiDateTimePicker.Name = "tglTransaksiDateTimePicker";
             this.tglTransaksiDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.tglTransaksiDateTimePicker.TabIndex = 18;
@@ -347,12 +329,15 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(336, 194);
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.posMutasiStokItemBindingSource, "IsPemasukan", true));
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(346, 44);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(90, 17);
+            this.checkBox1.Size = new System.Drawing.Size(114, 17);
             this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "Pengurangan";
+            this.checkBox1.Text = "Penambahan Stok";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // toolStrip1
             // 
@@ -364,7 +349,7 @@
             this.AddBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 274);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(433, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(627, 38);
             this.toolStrip1.TabIndex = 20;
             this.toolStrip1.TabStop = true;
             this.toolStrip1.Text = "toolStrip1";
@@ -417,10 +402,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 312);
+            this.ClientSize = new System.Drawing.Size(627, 312);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(keluarLabel);
+            this.Controls.Add(this.keluarLabel);
             this.Controls.Add(this.keluarTextBox);
             this.Controls.Add(keteranganLabel);
             this.Controls.Add(this.keteranganTextBox);
@@ -428,10 +413,8 @@
             this.Controls.Add(this.kodeHewanComboBox);
             this.Controls.Add(kodeKandangLabel);
             this.Controls.Add(this.kodeKandangComboBox);
-            this.Controls.Add(masukLabel);
+            this.Controls.Add(this.masukLabel);
             this.Controls.Add(this.masukTextBox);
-            this.Controls.Add(nomorTransaksiLabel);
-            this.Controls.Add(this.nomorTransaksiTextBox);
             this.Controls.Add(noRefLabel);
             this.Controls.Add(this.noRefComboBox);
             this.Controls.Add(tglTransaksiLabel);
@@ -442,10 +425,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMutasiStok";
             this.Load += new System.EventHandler(this.FrmMutasiStok_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingNavigator)).EndInit();
             this.mutasiStokItemBindingNavigator.ResumeLayout(false);
             this.mutasiStokItemBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posMutasiStokItemBindingSource)).EndInit();
@@ -462,14 +445,11 @@
         public Status IsNewRow
         {
             get { return isNewRow; }
-            set {
-                //if(isNewRow != value)
-                //{
-                    isNewRow = value;
-
-                    //Call Method
-                    this.OnStatusChanged(new FormStatusChangedEventArgs(value));
-                //}                
+            set
+            {                
+                isNewRow = value;
+                //Call Method in FrmMutasiStok code
+                this.OnStatusChanged(new FormStatusChangedEventArgs(value));                       
             }
         }
         #endregion
@@ -491,7 +471,6 @@
         private System.Windows.Forms.ComboBox kodeHewanComboBox;
         private System.Windows.Forms.ComboBox kodeKandangComboBox;
         private System.Windows.Forms.TextBox masukTextBox;
-        private System.Windows.Forms.TextBox nomorTransaksiTextBox;
         private System.Windows.Forms.ComboBox noRefComboBox;
         private System.Windows.Forms.DateTimePicker tglTransaksiDateTimePicker;
         private System.Windows.Forms.BindingSource cattleItemBindingSource;
@@ -506,6 +485,10 @@
 
         //User Added
         private Status isNewRow;
+        private System.Windows.Forms.Label keluarLabel;
+        private System.Windows.Forms.Label masukLabel;
+
+        //Declaration if new event - Important
         private event FormStatusChangedEventHandler statusChanged;
         #endregion
 

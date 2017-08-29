@@ -47,6 +47,13 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemsDataGridView = new System.Windows.Forms.DataGridView();
+            this.kodeanakDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaAyahDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaIbuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jenisKelaminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tglLahirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempatLahirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerItemDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,13 +65,6 @@
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kodeanakDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaAyahDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaIbuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenisKelaminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tglLahirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempatLahirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerItemBindingNavigator)).BeginInit();
             this.customerItemBindingNavigator.SuspendLayout();
@@ -247,6 +247,48 @@
             this.itemsDataGridView.Size = new System.Drawing.Size(947, 125);
             this.itemsDataGridView.TabIndex = 24;
             // 
+            // kodeanakDataGridViewTextBoxColumn
+            // 
+            this.kodeanakDataGridViewTextBoxColumn.DataPropertyName = "Kodeanak";
+            this.kodeanakDataGridViewTextBoxColumn.HeaderText = "Kodeanak";
+            this.kodeanakDataGridViewTextBoxColumn.Name = "kodeanakDataGridViewTextBoxColumn";
+            // 
+            // namaDataGridViewTextBoxColumn
+            // 
+            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
+            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            // 
+            // namaAyahDataGridViewTextBoxColumn
+            // 
+            this.namaAyahDataGridViewTextBoxColumn.DataPropertyName = "NamaAyah";
+            this.namaAyahDataGridViewTextBoxColumn.HeaderText = "NamaAyah";
+            this.namaAyahDataGridViewTextBoxColumn.Name = "namaAyahDataGridViewTextBoxColumn";
+            // 
+            // namaIbuDataGridViewTextBoxColumn
+            // 
+            this.namaIbuDataGridViewTextBoxColumn.DataPropertyName = "NamaIbu";
+            this.namaIbuDataGridViewTextBoxColumn.HeaderText = "NamaIbu";
+            this.namaIbuDataGridViewTextBoxColumn.Name = "namaIbuDataGridViewTextBoxColumn";
+            // 
+            // jenisKelaminDataGridViewTextBoxColumn
+            // 
+            this.jenisKelaminDataGridViewTextBoxColumn.DataPropertyName = "JenisKelamin";
+            this.jenisKelaminDataGridViewTextBoxColumn.HeaderText = "JenisKelamin";
+            this.jenisKelaminDataGridViewTextBoxColumn.Name = "jenisKelaminDataGridViewTextBoxColumn";
+            // 
+            // tglLahirDataGridViewTextBoxColumn
+            // 
+            this.tglLahirDataGridViewTextBoxColumn.DataPropertyName = "TglLahir";
+            this.tglLahirDataGridViewTextBoxColumn.HeaderText = "TglLahir";
+            this.tglLahirDataGridViewTextBoxColumn.Name = "tglLahirDataGridViewTextBoxColumn";
+            // 
+            // tempatLahirDataGridViewTextBoxColumn
+            // 
+            this.tempatLahirDataGridViewTextBoxColumn.DataPropertyName = "TempatLahir";
+            this.tempatLahirDataGridViewTextBoxColumn.HeaderText = "TempatLahir";
+            this.tempatLahirDataGridViewTextBoxColumn.Name = "tempatLahirDataGridViewTextBoxColumn";
+            // 
             // customerItemDataGridView
             // 
             this.customerItemDataGridView.AutoGenerateColumns = false;
@@ -263,11 +305,11 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
             this.customerItemDataGridView.DataSource = this.customerItemBindingSource;
+            this.customerItemDataGridView.Enabled = false;
             this.customerItemDataGridView.Location = new System.Drawing.Point(12, 36);
             this.customerItemDataGridView.Name = "customerItemDataGridView";
             this.customerItemDataGridView.Size = new System.Drawing.Size(947, 227);
             this.customerItemDataGridView.TabIndex = 24;
-            
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -328,48 +370,6 @@
             this.dataGridViewTextBoxColumn16.DataPropertyName = "Keterangan";
             this.dataGridViewTextBoxColumn16.HeaderText = "Keterangan";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // kodeanakDataGridViewTextBoxColumn
-            // 
-            this.kodeanakDataGridViewTextBoxColumn.DataPropertyName = "Kodeanak";
-            this.kodeanakDataGridViewTextBoxColumn.HeaderText = "Kodeanak";
-            this.kodeanakDataGridViewTextBoxColumn.Name = "kodeanakDataGridViewTextBoxColumn";
-            // 
-            // namaDataGridViewTextBoxColumn
-            // 
-            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
-            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
-            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
-            // 
-            // namaAyahDataGridViewTextBoxColumn
-            // 
-            this.namaAyahDataGridViewTextBoxColumn.DataPropertyName = "NamaAyah";
-            this.namaAyahDataGridViewTextBoxColumn.HeaderText = "NamaAyah";
-            this.namaAyahDataGridViewTextBoxColumn.Name = "namaAyahDataGridViewTextBoxColumn";
-            // 
-            // namaIbuDataGridViewTextBoxColumn
-            // 
-            this.namaIbuDataGridViewTextBoxColumn.DataPropertyName = "NamaIbu";
-            this.namaIbuDataGridViewTextBoxColumn.HeaderText = "NamaIbu";
-            this.namaIbuDataGridViewTextBoxColumn.Name = "namaIbuDataGridViewTextBoxColumn";
-            // 
-            // jenisKelaminDataGridViewTextBoxColumn
-            // 
-            this.jenisKelaminDataGridViewTextBoxColumn.DataPropertyName = "JenisKelamin";
-            this.jenisKelaminDataGridViewTextBoxColumn.HeaderText = "JenisKelamin";
-            this.jenisKelaminDataGridViewTextBoxColumn.Name = "jenisKelaminDataGridViewTextBoxColumn";
-            // 
-            // tglLahirDataGridViewTextBoxColumn
-            // 
-            this.tglLahirDataGridViewTextBoxColumn.DataPropertyName = "TglLahir";
-            this.tglLahirDataGridViewTextBoxColumn.HeaderText = "TglLahir";
-            this.tglLahirDataGridViewTextBoxColumn.Name = "tglLahirDataGridViewTextBoxColumn";
-            // 
-            // tempatLahirDataGridViewTextBoxColumn
-            // 
-            this.tempatLahirDataGridViewTextBoxColumn.DataPropertyName = "TempatLahir";
-            this.tempatLahirDataGridViewTextBoxColumn.HeaderText = "TempatLahir";
-            this.tempatLahirDataGridViewTextBoxColumn.Name = "tempatLahirDataGridViewTextBoxColumn";
             // 
             // FrmCustomer
             // 

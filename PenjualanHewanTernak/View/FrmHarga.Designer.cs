@@ -160,7 +160,7 @@
             this.hargaItemBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.hargaItemBindingNavigator.Name = "hargaItemBindingNavigator";
             this.hargaItemBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.hargaItemBindingNavigator.Size = new System.Drawing.Size(772, 28);
+            this.hargaItemBindingNavigator.Size = new System.Drawing.Size(768, 28);
             this.hargaItemBindingNavigator.TabIndex = 0;
             this.hargaItemBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -310,9 +310,9 @@
             this.DeleteBtn,
             this.SaveBtn,
             this.AddBtn});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 288);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 298);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(772, 38);
+            this.toolStrip2.Size = new System.Drawing.Size(768, 38);
             this.toolStrip2.TabIndex = 17;
             this.toolStrip2.TabStop = true;
             this.toolStrip2.Text = "toolStrip2";
@@ -372,7 +372,7 @@
             this.kodeGradeComboBox.FormattingEnabled = true;
             this.kodeGradeComboBox.Location = new System.Drawing.Point(133, 48);
             this.kodeGradeComboBox.Name = "kodeGradeComboBox";
-            this.kodeGradeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.kodeGradeComboBox.Size = new System.Drawing.Size(200, 21);
             this.kodeGradeComboBox.TabIndex = 18;
             this.kodeGradeComboBox.ValueMember = "KodeGrade";
             // 
@@ -388,10 +388,11 @@
             this.kodeHewanComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hargaItemBindingSource, "KodeHewan", true));
             this.kodeHewanComboBox.DataSource = this.cattleItemBindingSource;
             this.kodeHewanComboBox.DisplayMember = "NamaHewan";
+            this.kodeHewanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kodeHewanComboBox.FormattingEnabled = true;
             this.kodeHewanComboBox.Location = new System.Drawing.Point(133, 75);
             this.kodeHewanComboBox.Name = "kodeHewanComboBox";
-            this.kodeHewanComboBox.Size = new System.Drawing.Size(121, 21);
+            this.kodeHewanComboBox.Size = new System.Drawing.Size(200, 21);
             this.kodeHewanComboBox.TabIndex = 19;
             this.kodeHewanComboBox.ValueMember = "KodeHewan";
             // 
@@ -477,7 +478,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 326);
+            this.ClientSize = new System.Drawing.Size(768, 336);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.hargaItemDataGridView);
             this.Controls.Add(kodeHewanLabel);

@@ -68,6 +68,7 @@ namespace PenjualanHewanTernak.View
             cattleItemBindingSource.DataSource = m_CattleList;            
         }
 
+        //This was called in Form Designer in IsNewRow Properties
         protected void OnStatusChanged(FormStatusChangedEventArgs e)
         {
             //Report change
@@ -80,6 +81,7 @@ namespace PenjualanHewanTernak.View
             IsNewRow = Status.addNewMode;
         }
 
+        //Method on the form side
         private void StatusChanged(object sender, FormStatusChangedEventArgs e)
         {
             if(e.FormStatus == Status.addNewMode)
@@ -97,6 +99,29 @@ namespace PenjualanHewanTernak.View
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             IsNewRow = Status.editMode;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true)
+            {
+                masukTextBox.Visible = true;
+                masukLabel.Visible = true;
+                keluarTextBox.Visible = false;
+                keluarLabel.Visible = false;
+            }
+            else
+            {
+                masukTextBox.Visible = false;
+                masukLabel.Visible = false;
+                keluarTextBox.Visible = true;
+                keluarLabel.Visible = true;
+            }
+        }
+
+        private void keluarTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 

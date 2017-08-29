@@ -53,20 +53,20 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.gradeItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.jenisItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cattleItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jenisItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingNavigator)).BeginInit();
             this.cattleItemBindingNavigator.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradeItemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jenisItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cattleItemBindingNavigator
@@ -248,6 +248,7 @@
             // 
             // cattleItemDataGridView
             // 
+            this.cattleItemDataGridView.AllowUserToAddRows = false;
             this.cattleItemDataGridView.AutoGenerateColumns = false;
             this.cattleItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cattleItemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -282,6 +283,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "KodeGrade";
             this.dataGridViewTextBoxColumn3.DataSource = this.gradeItemBindingSource;
             this.dataGridViewTextBoxColumn3.DisplayMember = "Keterangan";
+            this.dataGridViewTextBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.dataGridViewTextBoxColumn3.HeaderText = "KodeGrade";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -295,8 +297,18 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "KodeJenis";
+            this.dataGridViewTextBoxColumn4.DataSource = this.jenisItemBindingSource;
+            this.dataGridViewTextBoxColumn4.DisplayMember = "Keterangan";
+            this.dataGridViewTextBoxColumn4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.dataGridViewTextBoxColumn4.HeaderText = "KodeJenis";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.ValueMember = "KodeJenis";
+            // 
+            // jenisItemBindingSource
+            // 
+            this.jenisItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.JenisItem);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -320,10 +332,6 @@
             // 
             this.cattleItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.CattleItem);
             // 
-            // jenisItemBindingSource
-            // 
-            this.jenisItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.JenisItem);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,8 +352,8 @@
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradeItemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jenisItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,7 +386,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
