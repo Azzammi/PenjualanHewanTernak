@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 namespace PenjualanHewanTernak.View
 {
     public enum Status
-    {
-        addNewMode,
-        editMode
+    {        
+        Init,
+        OnEditMode,
+        Ready,
+        NewRecord
     }
 
     public class FormStatusChangedEventArgs : EventArgs

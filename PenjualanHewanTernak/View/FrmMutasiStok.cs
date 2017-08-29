@@ -27,18 +27,37 @@ namespace PenjualanHewanTernak.View
 
         #endregion
 
-
+        #region Constructor
         public FrmMutasiStok()
         {
             InitializeComponent();
             //
-            // status event changed
+            // status event changed added
             //
             this.statusChanged += new FormStatusChangedEventHandler(this.StatusChanged);
+
+            //Set the crud status
+            IsNewRow = Status.NewRecord;
         }
+        public FrmMutasiStok(int bindingIndexer)
+        {
+            InitializeComponent();
+            //
+            // status event changed added
+            //
+            this.statusChanged += new FormStatusChangedEventHandler(this.StatusChanged);
+
+            //Set the crud status
+            IsNewRow = Status.OnEditMode;
+
+            //Set the index of bindingSource
+            mutasiStokItemBindingSource.Position = bindingIndexer;
+        }
+        #endregion
+
 
         private void FrmMutasiStok_Load(object sender, EventArgs e)
-        {
+        {            
             //Initialize Controller
             m_AppController = new AppController();
 
@@ -78,27 +97,33 @@ namespace PenjualanHewanTernak.View
         private void AddBtn_Click(object sender, EventArgs e)
         {
             mutasiStokItemBindingSource.AddNew();
-            IsNewRow = Status.addNewMode;
+            IsNewRow = Status.NewRecord;
         }
 
         //Method on the form side
         private void StatusChanged(object sender, FormStatusChangedEventArgs e)
-        {
-            if(e.FormStatus == Status.addNewMode)
+        {            
+            switch (e.FormStatus)
             {
-                AddBtn.Enabled = false;
-                DeleteBtn.Enabled = false;
-            }
-            else if(e.FormStatus == Status.editMode)
-            {
-                AddBtn.Enabled = true;
-                DeleteBtn.Enabled = true;
+                case Status.Init:                    
+                    SaveBtn.Enabled = false;
+                    break;
+                case Status.OnEditMode:                    
+                    SaveBtn.Enabled = true;
+                    break;
+                case Status.NewRecord:
+                    mutasiStokItemBindingSource.AddNew();               
+                    SaveBtn.Enabled = true;
+                    break;
+                default:
+                    break;
             }
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
-        {
-            IsNewRow = Status.editMode;
+        {            
+            MutasiStokItem parent = (MutasiStokItem)mutasiStokItemBindingSource.Current;
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -119,9 +144,42 @@ namespace PenjualanHewanTernak.View
             }
         }
 
-        private void keluarTextBox_TextChanged(object sender, EventArgs e)
+        private void CancelBtn_Click(object sender, EventArgs e)
         {
-            
+            switch (IsNewRow)
+            {
+                case Status.Init:
+                    break;
+                case Status.OnEditMode:
+                    break;
+                case Status.Ready:
+                    break;
+                case Status.NewRecord:
+                    
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void mutasiStokItemBindingSource_ListChanged(object sender, ListChangedEventArgs e)
+        {
+
+        }
+
+        private void FrmMutasiStok_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void mutasiStokItemBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            if (m_MutasiList == null) return;
+
+            CommandInsertMutasi createMutasi = new CommandInsertMutasi();
+            MutasiStokItem newMutasi = (MutasiStokItem)m_AppController.ExecuteCommand(createMutasi);
+
+            e.NewObject = newMutasi;
         }
     }
 

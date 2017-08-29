@@ -71,7 +71,7 @@ namespace PenjualanHewanTernak.DataAccess
         /// </summary>
         /// <param name="sqlQuery"></param>
         /// <returns></returns>
-        public static string ExecuteScalar(string sql)
+        public static object ExecuteScalar(string sql)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace PenjualanHewanTernak.DataAccess
                 SqlCommand command = new SqlCommand(sql, connection);
 
                 // Execute the command
-                string result = Convert.ToString(command.ExecuteScalar());
+                object result = Convert.ToString(command.ExecuteScalar());
 
                 // Close and dispose
                 command.Dispose();
@@ -96,7 +96,7 @@ namespace PenjualanHewanTernak.DataAccess
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message.ToString());
-                return "0";
+                return null;
             }
 
         }

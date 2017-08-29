@@ -40,6 +40,7 @@
             this.posMutasiStokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mutasiStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewMutasiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,10 +135,19 @@
             // 
             // mutasiStockToolStripMenuItem
             // 
+            this.mutasiStockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewMutasiToolStripMenuItem});
             this.mutasiStockToolStripMenuItem.Name = "mutasiStockToolStripMenuItem";
             this.mutasiStockToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mutasiStockToolStripMenuItem.Text = "Mutasi Stock";
             this.mutasiStockToolStripMenuItem.Click += new System.EventHandler(this.mutasiStockToolStripMenuItem_Click);
+            // 
+            // viewMutasiToolStripMenuItem
+            // 
+            this.viewMutasiToolStripMenuItem.Name = "viewMutasiToolStripMenuItem";
+            this.viewMutasiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewMutasiToolStripMenuItem.Text = "View Mutasi";
+            this.viewMutasiToolStripMenuItem.Click += new System.EventHandler(this.viewMutasiToolStripMenuItem_Click);
             // 
             // FrmMiniMenu
             // 
@@ -170,5 +180,6 @@
         private System.Windows.Forms.ToolStripMenuItem posMutasiStokToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mutasiStockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewMutasiToolStripMenuItem;
     }
 }

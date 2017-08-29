@@ -23,7 +23,18 @@ namespace PenjualanHewanTernak.Model
         #endregion
 
         #region Constructor
+        public MutasiStokItem()
+        {
 
+        }
+
+        public MutasiStokItem(bool createDatabaseRecord)
+        {
+            if(createDatabaseRecord != false)
+            {
+                CreateDatabaseRecord();
+            }
+        }
         #endregion
 
         #region Properties

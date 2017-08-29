@@ -37,24 +37,27 @@ namespace PenjualanHewanTernak.DataAccess
         #region Methods
         internal void CreateDatabaseRecord(MutasiStokItem newMutasi)
         {
-            string sql = "";
+            string sql = null;
             if(isPenguranganStok != true)
             {
                 sql = "INSERT INTO MUTASI_STOK" +
-                        "(NoRef, TglTransaksi, KodeGudang, KodeBarang, Keterangan, Masuk) " +
+                        "(Keterangan) " +
                         "OUTPUT INSERTED.NoTransaksi " +
-                        "VALUES(@noRef, @tanggal, @kodeGudang, @kodeBarang, @ket, @perubahanStok)";
+                        "VALUES('STOK MASUK')";
             }
             else
             {
                 sql = "INSERT INTO MUTASI_STOK" +
-                        "(NoRef, TglTransaksi, KodeGudang, KodeBarang, Keterangan, Keluar) " +
+                        "(Keterangan) " +
                         "OUTPUT INSERTED.NoTransaksi " +
-                        "VALUES(@noRef, @tanggal, @kodeGudang, @kodeBarang, @ket, @perubahanStok)";
+                        "VALUES('STOK KELUAR')";
             }
 
-            AddOrUpdateDatabaseRecord(sql, newMutasi);
-            
+            //Execute the query
+            int newRecordID = (int)DataProvider.ExecuteScalar(sql);
+
+            //Return the value
+            newMutasi.NomorTransaksi = newRecordID;            
         }
         //This Method was deprecated for security and valid data reason
         internal void UpdateDatabaseRecord(MutasiStokItem updateMutasi)

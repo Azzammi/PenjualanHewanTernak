@@ -33,7 +33,7 @@ namespace PenjualanHewanTernak.DataAccess
                          "('{0}') ", "CUST" + DataProvider.GenerateNumber("CUSTOMER","KodeCust"));
 
             //Execute Query
-            string newRecordID = DataProvider.ExecuteScalar(sql);
+            string newRecordID = (string)DataProvider.ExecuteScalar(sql);
 
             //Return Number
             newCustomer.KodeCust = newRecordID;

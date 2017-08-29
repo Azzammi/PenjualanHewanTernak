@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FSCollections;
+using PenjualanHewanTernak.DataAccess;
 
 namespace PenjualanHewanTernak.Model
 {
@@ -12,6 +13,7 @@ namespace PenjualanHewanTernak.Model
         #region Declarations
         private string reference;
         private string keterangan;
+        private bool stat;
         #endregion
 
         #region Constructor
@@ -29,10 +31,29 @@ namespace PenjualanHewanTernak.Model
             get { return keterangan; }
             set { keterangan = value; }
         }
+        public bool Stat
+        {
+            get { return stat; }
+            set { Stat = value; }
+        }
         #endregion
 
         #region Methods
-
+        internal void CreateDatabaseRecord()
+        {
+            PosPemasukanItemDAO dao = new PosPemasukanItemDAO();
+            dao.CreateDatabaseRecord(this);
+        }
+        internal void UpdateDatabaseRecord()
+        {
+            PosPemasukanItemDAO dao = new PosPemasukanItemDAO();
+            dao.UpdateDatabaseRecord(this);
+        }
+        internal void DeleteDatabaseRecord()
+        {
+            PosPemasukanItemDAO dao = new PosPemasukanItemDAO();
+            dao.DeleteDatabaseRecord(this.Ref);
+        }
         #endregion
     }
 }

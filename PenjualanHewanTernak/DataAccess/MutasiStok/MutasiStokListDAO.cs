@@ -28,8 +28,7 @@ namespace PenjualanHewanTernak.DataAccess
 
             foreach (DataRow parentRow in itemTabel.Rows)
             {
-                nextItem = new MutasiStokItem();
-                nextItem.NomorTransaksi = Convert.ToInt32(parentRow["noTransaksi"]);
+                nextItem = new MutasiStokItem();                
                 nextItem.NoRef = parentRow["noRef"].ToString();
                 nextItem.TglTransaksi = Convert.ToDateTime(parentRow["tglTransaksi"]);
                 nextItem.KodeKandang = parentRow["KodeGudang"].ToString();
@@ -37,7 +36,8 @@ namespace PenjualanHewanTernak.DataAccess
                 nextItem.StokAwal = Convert.ToInt32(parentRow["StokAwal"]);
                 nextItem.Masuk = Convert.ToInt32(parentRow["masuk"]);
                 nextItem.Keluar = Convert.ToInt32(parentRow["keluar"]);                
-                nextItem.Keterangan = parentRow["keterangan"].ToString();                
+                nextItem.Keterangan = parentRow["keterangan"].ToString();
+                nextItem.NomorTransaksi = Convert.ToInt32(parentRow["noTransaksi"]);
 
                 list.Add(nextItem);
             }

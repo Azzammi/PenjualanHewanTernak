@@ -32,7 +32,7 @@ namespace PenjualanHewanTernak.DataAccess
                          "VALUES('{0}','{1}')", "CHLD" + DataProvider.GenerateNumber("CHILDREN","KodeAnak"), kodeCust);
 
             //Execute The Query
-            string newRecordID = DataProvider.ExecuteScalar(sql);
+            string newRecordID = (string)DataProvider.ExecuteScalar(sql);
 
             //Set Record ID of the new Object
             newChildren.Kodeanak = newRecordID;

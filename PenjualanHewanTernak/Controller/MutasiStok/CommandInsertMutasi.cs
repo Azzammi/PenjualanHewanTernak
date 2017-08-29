@@ -10,20 +10,20 @@ namespace PenjualanHewanTernak.Controller.MutasiStok
     class CommandInsertMutasi : Command
     {
         #region Declaration
-        MutasiStokItem m_Item;
+        //MutasiStokItem m_Item;
         #endregion
 
         #region Constructor
-        public CommandInsertMutasi(MutasiStokItem item)
+        public CommandInsertMutasi()
         {
-            m_Item = item;
+            
         }
         #endregion
 
         #region Method
         public override object Execute()
         {
-            m_Item.CreateDatabaseRecord();
+            MutasiStokItem m_Item = new MutasiStokItem(true);
             return m_Item;
         }
         #endregion
