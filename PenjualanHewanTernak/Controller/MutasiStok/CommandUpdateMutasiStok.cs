@@ -7,27 +7,26 @@ using PenjualanHewanTernak.Model;
 
 namespace PenjualanHewanTernak.Controller.MutasiStok
 {
-    class CommandDeleteMutasiStok : Command
+    class CommandUpdateMutasiStok : Command
     {
-        #region Declaration
-        MutasiStokList m_List;
-        MutasiStokItem m_Item;    
+        #region Declaration        
+        bool isDecrementStock;
+        MutasiStokItem m_Item;
         #endregion
 
         #region Constructor
-        public CommandDeleteMutasiStok(MutasiStokList list, MutasiStokItem item)
-        {
-            m_List = list;
-            m_Item = item;           
+        public CommandUpdateMutasiStok(MutasiStokItem item, bool decrementStock)
+        {           
+            isDecrementStock = decrementStock;
+            m_Item = item;
         }
         #endregion
 
         #region Method
         public override object Execute()
         {
-            m_Item.DeleteDatabaseRecord();
-            m_List.Remove(m_Item);
-            return null;
+            m_Item.UpdateDatabaseRecord(isDecrementStock);
+            return m_Item;
         }
         #endregion
     }

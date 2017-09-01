@@ -10,13 +10,14 @@ using System.Windows.Forms;
 using PenjualanHewanTernak.Controller;
 using PenjualanHewanTernak.Controller.MutasiStok;
 using PenjualanHewanTernak.Model;
+
 namespace PenjualanHewanTernak.View
 {
     public partial class FrmViewMutasiStok : Form
     {
         #region Declaration
         AppController m_AppController;
-        MutasiStokList m_MutasiList;
+        MutasiStokList m_MutasiList;        
         #endregion
 
         public FrmViewMutasiStok()
@@ -46,10 +47,35 @@ namespace PenjualanHewanTernak.View
 
             //Get Mutasi Stok List
             CommandGetMutasiStok getMutasi = new CommandGetMutasiStok();
-            m_MutasiList = (MutasiStokList)m_AppController.ExecuteCommand(getMutasi);            
-
+            m_MutasiList = (MutasiStokList)m_AppController.ExecuteCommand(getMutasi);
+            
             //Bind to datasource
             mutasiStokItemBindingSource.DataSource = m_MutasiList;            
+        }
+
+        private void mutasiStokItemBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            // Confirm Delete
+            var pesan = MessageBox.Show("Apakah Anda Yakin Ingin Menghapus ? ", "Penghapusan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (pesan == DialogResult.Yes)
+            {
+
+                foreach (DataGridViewRow row in mutasiStokItemDataGridView.SelectedRows)
+                {
+                    MutasiStokItem item = row.DataBoundItem as MutasiStokItem;
+                    if (item != null)
+                    {
+                        CommandDeleteMutasiStok deleteItem = new CommandDeleteMutasiStok(m_MutasiList, item);
+                        m_AppController.ExecuteCommand(deleteItem);
+                    }
+
+                }
+            }
         }
     }
 }

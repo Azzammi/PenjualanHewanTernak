@@ -25,6 +25,8 @@ namespace PenjualanHewanTernak.View
         KandangList m_KandangList;
         CattleList m_CattleList;
 
+        //int bindingPosition;
+        //Status formStatus;
         #endregion
 
         #region Constructor
@@ -35,6 +37,9 @@ namespace PenjualanHewanTernak.View
             // status event changed added
             //
             this.statusChanged += new FormStatusChangedEventHandler(this.StatusChanged);
+
+            //Load the list and put it to bindingsource
+            this.FrmMutasiStok_Load();
 
             //Set the crud status
             IsNewRow = Status.NewRecord;
@@ -47,6 +52,9 @@ namespace PenjualanHewanTernak.View
             //
             this.statusChanged += new FormStatusChangedEventHandler(this.StatusChanged);
 
+            //Load the list and put it to binding source
+            this.FrmMutasiStok_Load();
+
             //Set the crud status
             IsNewRow = Status.OnEditMode;
 
@@ -56,7 +64,7 @@ namespace PenjualanHewanTernak.View
         #endregion
 
 
-        private void FrmMutasiStok_Load(object sender, EventArgs e)
+        private void FrmMutasiStok_Load()
         {            
             //Initialize Controller
             m_AppController = new AppController();
@@ -84,7 +92,7 @@ namespace PenjualanHewanTernak.View
             mutasiStokItemBindingSource.DataSource = m_MutasiList;
             posMutasiStokItemBindingSource.DataSource = m_PosMutasiList;
             kandangItemBindingSource.DataSource = m_KandangList;
-            cattleItemBindingSource.DataSource = m_CattleList;            
+            cattleItemBindingSource.DataSource = m_CattleList;         
         }
 
         //This was called in Form Designer in IsNewRow Properties
@@ -121,14 +129,19 @@ namespace PenjualanHewanTernak.View
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
-        {            
-            MutasiStokItem parent = (MutasiStokItem)mutasiStokItemBindingSource.Current;
+        {
+            if (m_MutasiList == null) return;
 
+            MutasiStokItem parent = (MutasiStokItem)mutasiStokItemBindingSource.Current;
+            if (parent == null) return;
+
+            CommandUpdateMutasiStok changeMutasi = new CommandUpdateMutasiStok(parent, checkBox1.Checked);
+            m_AppController.ExecuteCommand(changeMutasi);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox1.Checked == true)
+            if (checkBox1.Checked == true)
             {
                 masukTextBox.Visible = true;
                 masukLabel.Visible = true;
@@ -161,12 +174,7 @@ namespace PenjualanHewanTernak.View
                     break;
             }
         }
-
-        private void mutasiStokItemBindingSource_ListChanged(object sender, ListChangedEventArgs e)
-        {
-
-        }
-
+        
         private void FrmMutasiStok_FormClosing(object sender, FormClosingEventArgs e)
         {
 

@@ -118,6 +118,7 @@
     <Compile Include="Controller\MutasiStok\CommandDeleteMutasiStok.cs" />
     <Compile Include="Controller\MutasiStok\CommandGetMutasiStok.cs" />
     <Compile Include="Controller\MutasiStok\CommandInsertMutasi.cs" />
+    <Compile Include="Controller\MutasiStok\CommandUpdateMutasiStok.cs" />
     <Compile Include="Controller\PosMutasiStok\CommandDeletePosMutasiStok.cs" />
     <Compile Include="Controller\PosMutasiStok\CommandGetPosMutasiStok.cs" />
     <Compile Include="Controller\PosMutasiStok\CommandInsertPosMutasiStok.cs" />

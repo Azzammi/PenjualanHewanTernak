@@ -13,7 +13,7 @@ namespace PenjualanHewanTernak.Model
         #region Declarations
         private int nomorTransaksi;
         private string noRef;
-        private DateTime tglTransaksi;
+        private DateTime tglTransaksi = DateTime.Now;
         private string kodeKandang;
         private string kodeHewan;
         private string keterangan;
@@ -88,12 +88,17 @@ namespace PenjualanHewanTernak.Model
         #region Methods
         internal void CreateDatabaseRecord()
         {
-            MutasiStokDAO dao = new MutasiStokDAO(false);
+            MutasiStokDAO dao = new MutasiStokDAO();
             dao.CreateDatabaseRecord(this);
+        }
+        internal void UpdateDatabaseRecord(bool isDecrementStock)
+        {
+            MutasiStokDAO dao = new MutasiStokDAO();
+            dao.UpdateDatabaseRecord(this, isDecrementStock);
         }
         internal void DeleteDatabaseRecord()
         {
-            MutasiStokDAO dao = new MutasiStokDAO(true);
+            MutasiStokDAO dao = new MutasiStokDAO();
             dao.DeleteDatabaseRecord(this.NomorTransaksi);
         }
         #endregion

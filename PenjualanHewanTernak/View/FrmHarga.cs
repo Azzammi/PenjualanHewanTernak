@@ -125,5 +125,10 @@ namespace PenjualanHewanTernak.View
             //kodeHewanComboBox.DataBindings.Add("SelectedValue", cattleItemBindingSource, "KodeHewan");
 
         }
+
+        private void kodeGradeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

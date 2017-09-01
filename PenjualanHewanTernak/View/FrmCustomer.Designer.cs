@@ -305,7 +305,6 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
             this.customerItemDataGridView.DataSource = this.customerItemBindingSource;
-            this.customerItemDataGridView.Enabled = false;
             this.customerItemDataGridView.Location = new System.Drawing.Point(12, 36);
             this.customerItemDataGridView.Name = "customerItemDataGridView";
             this.customerItemDataGridView.Size = new System.Drawing.Size(947, 227);

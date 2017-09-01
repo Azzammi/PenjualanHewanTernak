@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmViewMutasiStok));
             this.mutasiStokItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.mutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -42,15 +43,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.mutasiStokItemDataGridView = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addNewRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletesRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.CancelBtn = new System.Windows.Forms.ToolStripButton();
-            this.DeleteBtn = new System.Windows.Forms.ToolStripButton();
-            this.EditBtn = new System.Windows.Forms.ToolStripButton();
-            this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,13 +52,23 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mutasiStokItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addNewRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletesRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.CancelBtn = new System.Windows.Forms.ToolStripButton();
+            this.DeleteBtn = new System.Windows.Forms.ToolStripButton();
+            this.EditBtn = new System.Windows.Forms.ToolStripButton();
+            this.AddBtn = new System.Windows.Forms.ToolStripButton();
+            this.cattleItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingNavigator)).BeginInit();
             this.mutasiStokItemBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemDataGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mutasiStokItemBindingNavigator
@@ -96,6 +98,11 @@
             this.mutasiStokItemBindingNavigator.Size = new System.Drawing.Size(900, 33);
             this.mutasiStokItemBindingNavigator.TabIndex = 0;
             this.mutasiStokItemBindingNavigator.Text = "bindingNavigator1";
+            this.mutasiStokItemBindingNavigator.RefreshItems += new System.EventHandler(this.mutasiStokItemBindingNavigator_RefreshItems);
+            // 
+            // mutasiStokItemBindingSource
+            // 
+            this.mutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.MutasiStokItem);
             // 
             // bindingNavigatorCountItem
             // 
@@ -192,97 +199,8 @@
             this.mutasiStokItemDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mutasiStokItemDataGridView.Location = new System.Drawing.Point(0, 33);
             this.mutasiStokItemDataGridView.Name = "mutasiStokItemDataGridView";
-            this.mutasiStokItemDataGridView.Size = new System.Drawing.Size(900, 286);
+            this.mutasiStokItemDataGridView.Size = new System.Drawing.Size(900, 306);
             this.mutasiStokItemDataGridView.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewRecordToolStripMenuItem,
-            this.editRecordToolStripMenuItem,
-            this.deletesRecordToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 70);
-            // 
-            // addNewRecordToolStripMenuItem
-            // 
-            this.addNewRecordToolStripMenuItem.Image = global::PenjualanHewanTernak.Properties.Resources.Add_50px;
-            this.addNewRecordToolStripMenuItem.Name = "addNewRecordToolStripMenuItem";
-            this.addNewRecordToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.addNewRecordToolStripMenuItem.Text = "Add New Record";
-            // 
-            // editRecordToolStripMenuItem
-            // 
-            this.editRecordToolStripMenuItem.Image = global::PenjualanHewanTernak.Properties.Resources.Pencil_Tip_50px;
-            this.editRecordToolStripMenuItem.Name = "editRecordToolStripMenuItem";
-            this.editRecordToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.editRecordToolStripMenuItem.Text = "Edit Record";
-            // 
-            // deletesRecordToolStripMenuItem
-            // 
-            this.deletesRecordToolStripMenuItem.Image = global::PenjualanHewanTernak.Properties.Resources.Delete_50px;
-            this.deletesRecordToolStripMenuItem.Name = "deletesRecordToolStripMenuItem";
-            this.deletesRecordToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.deletesRecordToolStripMenuItem.Text = "Delete(s) Record";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CancelBtn,
-            this.DeleteBtn,
-            this.EditBtn,
-            this.AddBtn});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 319);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(900, 38);
-            this.toolStrip1.TabIndex = 21;
-            this.toolStrip1.TabStop = true;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // CancelBtn
-            // 
-            this.CancelBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.CancelBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Close_Window_96px;
-            this.CancelBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(76, 35);
-            this.CancelBtn.Text = "Cancel / Exit";
-            this.CancelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.DeleteBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Delete_50px;
-            this.DeleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(57, 35);
-            this.DeleteBtn.Text = "Delete(s)";
-            this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // EditBtn
-            // 
-            this.EditBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.EditBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Pencil_Tip_50px;
-            this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(31, 35);
-            this.EditBtn.Text = "Edit";
-            this.EditBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
-            // 
-            // AddBtn
-            // 
-            this.AddBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.AddBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Plus_96px;
-            this.AddBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(55, 35);
-            this.AddBtn.Text = "Tambah";
-            this.AddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -338,15 +256,105 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "Keluar";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
-            // mutasiStokItemBindingSource
+            // contextMenuStrip1
             // 
-            this.mutasiStokItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.MutasiStokItem);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewRecordToolStripMenuItem,
+            this.editRecordToolStripMenuItem,
+            this.deletesRecordToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 70);
+            // 
+            // addNewRecordToolStripMenuItem
+            // 
+            this.addNewRecordToolStripMenuItem.Image = global::PenjualanHewanTernak.Properties.Resources.Add_50px;
+            this.addNewRecordToolStripMenuItem.Name = "addNewRecordToolStripMenuItem";
+            this.addNewRecordToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.addNewRecordToolStripMenuItem.Text = "Add New Record";
+            // 
+            // editRecordToolStripMenuItem
+            // 
+            this.editRecordToolStripMenuItem.Image = global::PenjualanHewanTernak.Properties.Resources.Pencil_Tip_50px;
+            this.editRecordToolStripMenuItem.Name = "editRecordToolStripMenuItem";
+            this.editRecordToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.editRecordToolStripMenuItem.Text = "Edit Record";
+            // 
+            // deletesRecordToolStripMenuItem
+            // 
+            this.deletesRecordToolStripMenuItem.Image = global::PenjualanHewanTernak.Properties.Resources.Delete_50px;
+            this.deletesRecordToolStripMenuItem.Name = "deletesRecordToolStripMenuItem";
+            this.deletesRecordToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.deletesRecordToolStripMenuItem.Text = "Delete(s) Record";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CancelBtn,
+            this.DeleteBtn,
+            this.EditBtn,
+            this.AddBtn});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 339);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(900, 38);
+            this.toolStrip1.TabIndex = 21;
+            this.toolStrip1.TabStop = true;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // CancelBtn
+            // 
+            this.CancelBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.CancelBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Close_Window_96px;
+            this.CancelBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(76, 35);
+            this.CancelBtn.Text = "Cancel / Exit";
+            this.CancelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.DeleteBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Delete_50px;
+            this.DeleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(57, 35);
+            this.DeleteBtn.Text = "Delete(s)";
+            this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
+            // EditBtn
+            // 
+            this.EditBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.EditBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Pencil_Tip_50px;
+            this.EditBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(31, 35);
+            this.EditBtn.Text = "Edit";
+            this.EditBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.AddBtn.Image = global::PenjualanHewanTernak.Properties.Resources.Plus_96px;
+            this.AddBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(55, 35);
+            this.AddBtn.Text = "Tambah";
+            this.AddBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
+            // cattleItemBindingSource
+            // 
+            this.cattleItemBindingSource.DataSource = typeof(PenjualanHewanTernak.Model.CattleItem);
             // 
             // FrmViewMutasiStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 357);
+            this.ClientSize = new System.Drawing.Size(900, 377);
             this.Controls.Add(this.mutasiStokItemDataGridView);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mutasiStokItemBindingNavigator);
@@ -357,11 +365,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingNavigator)).EndInit();
             this.mutasiStokItemBindingNavigator.ResumeLayout(false);
             this.mutasiStokItemBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemDataGridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,5 +409,6 @@
         private System.Windows.Forms.ToolStripMenuItem addNewRecordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editRecordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deletesRecordToolStripMenuItem;
+        private System.Windows.Forms.BindingSource cattleItemBindingSource;
     }
 }

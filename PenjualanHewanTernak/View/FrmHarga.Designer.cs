@@ -375,6 +375,7 @@
             this.kodeGradeComboBox.Size = new System.Drawing.Size(200, 21);
             this.kodeGradeComboBox.TabIndex = 18;
             this.kodeGradeComboBox.ValueMember = "KodeGrade";
+            this.kodeGradeComboBox.SelectedIndexChanged += new System.EventHandler(this.kodeGradeComboBox_SelectedIndexChanged);
             // 
             // kodeHewanComboBox
             // 
