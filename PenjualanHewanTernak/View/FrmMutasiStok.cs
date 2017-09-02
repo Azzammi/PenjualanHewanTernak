@@ -189,6 +189,11 @@ namespace PenjualanHewanTernak.View
 
             e.NewObject = newMutasi;
         }
+
+        private void FrmMutasiStok_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

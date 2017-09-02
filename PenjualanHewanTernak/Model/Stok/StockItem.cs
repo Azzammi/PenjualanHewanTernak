@@ -24,7 +24,7 @@ namespace PenjualanHewanTernak.Model
         public string KodeGudang
         {
             get { return kodeGudang; }
-            set { kodeGudang = value; }
+            set { kodeGudang = value; }         
         }
         public string KodeHewan
         {

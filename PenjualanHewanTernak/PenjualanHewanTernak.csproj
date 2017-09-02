@@ -123,6 +123,7 @@
     <Compile Include="Controller\PosMutasiStok\CommandGetPosMutasiStok.cs" />
     <Compile Include="Controller\PosMutasiStok\CommandInsertPosMutasiStok.cs" />
     <Compile Include="Controller\PosMutasiStok\CommandUpdatePosMutasiStok.cs" />
+    <Compile Include="Controller\Stok\CommandGetStok.cs" />
     <Compile Include="Custom Control\comboProperty.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -146,7 +147,8 @@
     <Compile Include="DataAccess\PosMutasiStok\PosMutasiStokListDAO.cs" />
     <Compile Include="DataAccess\PosPemasukan\PosPemasukanItemDAO.cs" />
     <Compile Include="DataAccess\PosPemasukan\PosPemasukanListDAO.cs" />
-    <Compile Include="DataAccess\StockItemDAO.cs" />
+    <Compile Include="DataAccess\Stok\StockItemDAO.cs" />
+    <Compile Include="DataAccess\Stok\StockListDAO.cs" />
     <Compile Include="Report\CustomerReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -242,6 +244,12 @@
     <Compile Include="View\FrmPosMutasiStok.Designer.cs">
       <DependentUpon>FrmPosMutasiStok.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmStok.Designer.cs">
+      <DependentUpon>FrmStok.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmViewMutasiStok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +303,9 @@
     <EmbeddedResource Include="View\FrmPosMutasiStok.resx">
       <DependentUpon>FrmPosMutasiStok.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmStok.resx">
+      <DependentUpon>FrmStok.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmViewMutasiStok.resx">
       <DependentUpon>FrmViewMutasiStok.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +320,7 @@
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.KandangItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.MutasiStokItem.datasource" />
     <None Include="Properties\DataSources\PenjualanHewanTernak.Model.PosMutasiStokItem.datasource" />
+    <None Include="Properties\DataSources\PenjualanHewanTernak.Model.StockItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

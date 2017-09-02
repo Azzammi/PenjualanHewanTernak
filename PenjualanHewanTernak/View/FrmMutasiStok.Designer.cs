@@ -311,6 +311,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mutasi Stok - ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMutasiStok_FormClosing);
+            this.Load += new System.EventHandler(this.FrmMutasiStok_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mutasiStokItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cattleItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kandangItemBindingSource)).EndInit();

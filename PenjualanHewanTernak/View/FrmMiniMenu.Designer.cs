@@ -41,6 +41,7 @@
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mutasiStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMutasiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,7 +129,8 @@
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mutasiStockToolStripMenuItem});
+            this.mutasiStockToolStripMenuItem,
+            this.stockToolStripMenuItem1});
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.stockToolStripMenuItem.Text = "Stock";
@@ -145,9 +147,16 @@
             // viewMutasiToolStripMenuItem
             // 
             this.viewMutasiToolStripMenuItem.Name = "viewMutasiToolStripMenuItem";
-            this.viewMutasiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewMutasiToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.viewMutasiToolStripMenuItem.Text = "View Mutasi";
             this.viewMutasiToolStripMenuItem.Click += new System.EventHandler(this.viewMutasiToolStripMenuItem_Click);
+            // 
+            // stockToolStripMenuItem1
+            // 
+            this.stockToolStripMenuItem1.Name = "stockToolStripMenuItem1";
+            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.stockToolStripMenuItem1.Text = "Stock";
+            this.stockToolStripMenuItem1.Click += new System.EventHandler(this.stockToolStripMenuItem1_Click);
             // 
             // FrmMiniMenu
             // 
@@ -181,5 +190,6 @@
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mutasiStockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewMutasiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem1;
     }
 }
