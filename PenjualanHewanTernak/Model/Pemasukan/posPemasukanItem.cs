@@ -17,7 +17,17 @@ namespace PenjualanHewanTernak.Model
         #endregion
 
         #region Constructor
+        public posPemasukanItem()
+        {
 
+        }
+        public posPemasukanItem(bool CreateDatabaseRecord)
+        {
+            if(CreateDatabaseRecord != false)
+            {
+                this.CreateDatabaseRecord();
+            }
+        }
         #endregion
 
         #region Properties
@@ -34,7 +44,7 @@ namespace PenjualanHewanTernak.Model
         public bool Stat
         {
             get { return stat; }
-            set { Stat = value; }
+            set { stat = value; }
         }
         #endregion
 

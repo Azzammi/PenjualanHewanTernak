@@ -81,5 +81,17 @@ namespace PenjualanHewanTernak.View
             FrmStok form = new FrmStok();
             form.ShowDialog();
         }
+
+        private void posPemasukanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPosPemasukan form = new FrmPosPemasukan();
+            form.ShowDialog();
+        }
+
+        private void posPengeluaranToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPosPengeluaran form = new FrmPosPengeluaran();
+            form.ShowDialog();
+        }
     }
 }

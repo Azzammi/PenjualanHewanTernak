@@ -4,41 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PenjualanHewanTernak.Model;
+using System.Windows.Forms;
 using System.Data.SqlClient;
 using PenjualanHewanTernak.Properties;
-using System.Windows.Forms;
 
 namespace PenjualanHewanTernak.DataAccess
 {
-    class PosPemasukanItemDAO
+    class PosPengeluaranItemDAO
     {
         #region Declaration
         private static string m_ConnectionString;
         #endregion
 
-        #region Constructor
-        public PosPemasukanItemDAO()
+        #region Constrcutor
+        public PosPengeluaranItemDAO()
         {
             m_ConnectionString = Settings.Default.ConnectionString;
         }
         #endregion
 
         #region Method
-        internal void CreateDatabaseRecord(posPemasukanItem newItem)
+        internal void CreateDatabaseRecord(posPengeluaranItem newPengeluaran)
         {
-            string sql = "INSERT INTO POS_PEMASUKAN(REF)" +
-                        " OUTPUT INSERTED.REF " +
-                        " VALUES('" + "IN" + DataProvider.GenerateNumber("POS_PEMASUKAN","REF") + "')";
+            string sql = "INSERT INTO POS_PENGELUARAN (REF) " +
+                         " OUTPUT INSERTED.REF " +
+                         " VALUES ('" + "OU" + DataProvider.GenerateNumber("POS_PENGELUARAN", "REF") + "')";
 
-            //Execute The Query
+            //Execute Query
             string newRecordID = (string)DataProvider.ExecuteScalar(sql);
 
-            //Return the value
-            newItem.Ref = newRecordID;
+            //Return new value
+            newPengeluaran.Ref = newRecordID; 
         }
-        internal void UpdateDatabaseRecord(posPemasukanItem updateItem)
+        internal void UpdateDatabaseRecord(posPengeluaranItem updateItem)
         {
-            string sql = "UPDATE POS_PEMASUKAN SET " +
+            string sql = "UPDATE POS_PENGELUARAN SET " +
                         "KETERANGAN = @ket, " +
                         "Stat = @stat " +
                         "WHERE REF = @ref";
@@ -56,7 +56,7 @@ namespace PenjualanHewanTernak.DataAccess
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@ref", updateItem.Ref);
                 command.Parameters.AddWithValue("@ket", updateItem.Keterangan);
-                command.Parameters.AddWithValue("@stat", updateItem.Stat);              
+                command.Parameters.AddWithValue("@stat", updateItem.Stat);
 
                 //execute the command
                 command.ExecuteNonQuery();
@@ -72,7 +72,7 @@ namespace PenjualanHewanTernak.DataAccess
                 MessageBox.Show(ex.Message.ToString());
             }
         }
-        internal void DeleteDatabaseRecord(string noRef)
+        internal void DeleteDatabaseRecord(string referenceNumber)
         {
             try
             {
@@ -81,12 +81,12 @@ namespace PenjualanHewanTernak.DataAccess
                 connection.Open();
 
                 //create and configure a command
-                SqlCommand command = new SqlCommand("DELETE FROM POS_PEMASUKAN WHERE REF = @ref", connection);
+                SqlCommand command = new SqlCommand("DELETE FROM POS_PENGELUARAN WHERE REF = @ref", connection);
 
                 //Adding value through parameter
                 command.CommandType = System.Data.CommandType.Text;
                 command.Parameters.Clear();
-                command.Parameters.AddWithValue("@ref", noRef);
+                command.Parameters.AddWithValue("@ref", referenceNumber);
 
                 //execute the command
                 command.ExecuteNonQuery();
